@@ -65,14 +65,17 @@ export default function DocPartElems(props:{
       )}
       { params.length == 0
         ? <></>
-        : <ul class="list-disc mt-1">
-            {params.map(d => <li class="flex gap-3 py-1">
-              <span class="font-semibold min-w-[5rem] pt-px shrink-0">{d.name}</span>
-              <p>
-                {d.doc ? replacer(d.doc.split("`")) : <></>}
-              </p>
-            </li>)}
-          </ul>
+        : <Fragment>
+            <span class="text-neutral-400 font-bold mt-2 -mb-3">Parameters</span>
+            <ul class="list-disc mt-1">
+              {params.map(d => <li class="flex gap-3 py-1 ml-2">
+                <span class="font-semibold min-w-[5rem] pt-px shrink-0">{d.name}</span>
+                <p>
+                  {d.doc ? replacer(d.doc.split("`")) : <></>}
+                </p>
+              </li>)}
+            </ul>
+          </Fragment>
       }
     </Fragment>
   )
