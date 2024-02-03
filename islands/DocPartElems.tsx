@@ -31,7 +31,7 @@ export default function DocPartElems(props:{
       ? data.jsDoc.tags.filter(d => d.kind == "param") as Array<JsDocTagParam>
       : []
 
-  const headname = params.length > 0
+  const headname = (attrType == "Method") || (params.length > 0)
     ? data.name + "( " + params.map(d => d.name).join(", ") + " )"
     : data.name
 
