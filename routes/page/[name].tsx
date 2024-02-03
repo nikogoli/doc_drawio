@@ -22,6 +22,7 @@ export default function MyPage(props: PageProps<StateData>) {
   return (
     <>
       <Head>
+        <title>{props.data.name}</title>
         <link
           href="https://unpkg.com/@speed-highlight/core/dist/themes/visual-studio-dark.css"
           rel="stylesheet"></link>
