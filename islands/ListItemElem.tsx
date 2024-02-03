@@ -56,7 +56,7 @@ export default function ListItemElem(props:{
       </p>
       {is_abst
         ? <DivWithPop id={`pop_${data.name}`} popover="auto"
-                class="w-[93%] max-h-[90%] overflow-y-scroll rounded">
+                class="w-[87%] max-h-[90%] overflow-y-scroll rounded">
             <div class="flex flex-col gap-2.5 p-6">
               <DocPartElems {...{
                 attrType: type_dic[data_type],
