@@ -63,9 +63,6 @@ export default function ListItemElem(props:{
                 data: data,
                 codeLang: "js",
                 paragraphHandler: (elems) => <p class="">{elems}</p>,
-                innerTextHandler: (text, is_code) => is_code
-                    ? <code class="text-sm bg-[#f0f0f0] font-hira px-0.5 rounded">{text}</code>
-                    : <span>{text}</span>,
                 listItemHandler: (name, text_elems) => (
                   <div class="flex gap-2">
                     <p class="min-w-[6rem] shrink-0 flex gap-1 font-semibold">

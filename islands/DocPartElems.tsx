@@ -2,6 +2,7 @@ import { JSX, Fragment } from "preact"
 
 import tokenize from "../hooks/useTokenize.ts"
 import { type ShjLanguage } from "../hooks/useTokenize.ts"
+import multiRegReplacer from "../hooks/useMultiReplace.tsx"
 import { ClassPropertyDef, ClassMethodDef, ClassConstructorDef, JsDocTagParam } from "../types.ts"
 
 
@@ -9,13 +10,12 @@ export default function DocPartElems(props:{
   attrType: "Class"|"Constructor"|"Method"|"Property",
   data: ClassPropertyDef | ClassMethodDef | ClassConstructorDef,
   codeLang: ShjLanguage,
-  paragraphHandler: (elems:Array<JSX.Element>) => JSX.Element,
-  innerTextHandler: (text:string, is_code:boolean) => JSX.Element,
-  listItemHandler:  (name:string, text_elems:Array<JSX.Element>) => JSX.Element,
+  paragraphHandler: (elems:Array<JSX.Element|string>) => JSX.Element,
+  listItemHandler:  (name:string, text_elems:Array<JSX.Element|string>) => JSX.Element,
   hideLineNumbers?: true,
 }){
   const { attrType, data, codeLang,
-        paragraphHandler, innerTextHandler, listItemHandler, hideLineNumbers } = props
+        paragraphHandler, listItemHandler, hideLineNumbers } = props
   if (!data.jsDoc?.doc){
     return (<></>)
   }
@@ -35,7 +35,18 @@ export default function DocPartElems(props:{
     ? `${data.name}( ${params.map(d => d.name+(d.doc?.startsWith("Optional") ? "?" : "")).join(", ")} )`
     : data.name
 
-  const replacer = (ar: Array<string>) => ar.map((text, idx) => innerTextHandler(text,  idx % 2 == 1))
+  const innerTextHandler = (text: string) => multiRegReplacer(text, [
+    { reg: /`(.+?)`/g,
+      toFunc: (mt) => <code class="text-sm bg-[#f0f0f0] font-hira px-0.5 rounded">{mt[1]}</code>},
+    { reg: /(True|true|False|false|Null|null)/g,
+      toFunc: (mt) => <code class="text-sm bg-[#f0f0f0] font-hira px-0.5 rounded">{mt[1]}</code> },
+    { reg: /^Optional/g,
+      toFunc: (_mt) => <span class="text-emerald-700">Optional</span>},
+    { reg: /(String|string|Number|number|Integer|integer|Boolean|boolean)/g,
+      toFunc: (mt) => <span class="text-purple-700">{mt[1]}</span>},
+    { reg: /(Default|default|Returns|returns)/g,
+      toFunc:  (mt) => <span class="text-rose-700">{mt[1]}</span>}
+  ])
   
   const color_dic: {[k in "Class"|"Constructor"|"Method"|"Property"]: string} = {
     Class: "text-lime-600",
@@ -56,9 +67,9 @@ export default function DocPartElems(props:{
           {d.text.split("\n").map(tx => {
             if (tx.startsWith("-")){
               const [name, text] = tx.replace("- ", "").split("：")
-              return listItemHandler(name, replacer(text.split("`")))
+              return listItemHandler(name, innerTextHandler(text))
             } else {
-              return paragraphHandler(replacer(tx.split("`")))
+              return paragraphHandler(innerTextHandler(tx))
             }
           })}
         </Fragment>
@@ -71,7 +82,7 @@ export default function DocPartElems(props:{
               {params.map(d => <li class="flex gap-3 py-1 ml-2">
                 <span class="font-semibold min-w-[5rem] pt-px shrink-0">{d.name}</span>
                 <p>
-                  {d.doc ? replacer(d.doc.split("`")) : <></>}
+                  {d.doc ? innerTextHandler(d.doc) : <></>}
                 </p>
               </li>)}
             </ul>
