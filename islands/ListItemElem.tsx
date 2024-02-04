@@ -32,7 +32,8 @@ export default function ListItemElem(props:{
 
   const [first_texts, ...others] = data.jsDoc?.doc?.split("\n") ?? ["", ""]
   const para_elems = first_texts.split("`").map((text, idx) => innerTextHandler(text,idx % 2 == 1))
-  const is_abst = (data_type == "methods") || others.length >= 1
+
+  const is_abst = (data_type == "methods") || others.length >= 1 || (data.jsDoc?.tags?.length ?? 0) > 0
   
   const type_dic:{[k in typeof data_type]: "Method"|"Property"|"Constructor"} = {
     methods: "Method", properties: "Property", constructors: "Constructor"
