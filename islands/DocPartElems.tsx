@@ -24,7 +24,7 @@ export default function DocPartElems(props:{
   const parts = (!text.includes("```"))
     ? [{text, is_codeElem: false}]
     : text.split("```").map((t, idx) => {
-        return { text: t.trimEnd(), is_codeElem: idx % 2 == 1 }
+        return { text: t.trim(), is_codeElem: idx % 2 == 1 }
       })
 
   const params = data?.jsDoc?.tags
