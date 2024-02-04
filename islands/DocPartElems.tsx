@@ -32,7 +32,7 @@ export default function DocPartElems(props:{
       : []
 
   const headname = (attrType == "Method") || (params.length > 0)
-    ? data.name + "( " + params.map(d => d.name).join(", ") + " )"
+    ? `${data.name}( ${params.map(d => d.name+(d.doc?.startsWith("Optional") ? "?" : "")).join(", ")} )`
     : data.name
 
   const replacer = (ar: Array<string>) => ar.map((text, idx) => innerTextHandler(text,  idx % 2 == 1))
