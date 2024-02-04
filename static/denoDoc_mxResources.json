@@ -1,0 +1,491 @@
+[
+  {
+    "kind": "class",
+    "name": "mxResources",
+    "location": {
+      "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxResources.ts",
+      "line": 20,
+      "col": 0
+    },
+    "declarationKind": "export",
+    "jsDoc": {
+      "doc": "Implements internationalization. You can provide any number of  resource files on the server using the following format for the  filename: name[-en].properties. The en stands for any lowercase  2-character language shortcut (eg. de for german, fr for french).\n\nIf the optional language extension is omitted, then the file is used as a  default resource which is loaded in all cases. If a properties file for a  specific language exists, then it is used to override the settings in the  default resource. All entries in the file are of the form key=value. The values may then be accessed in code via `<get>`. Lines without  equal signs in the properties files are ignored.\n\nResource files may either be added programmatically using `<add>` or via a resource tag in the UI section of the  editor configuration file, eg:\n```\n<mxEditor>\n  <ui>\n    <resource basename=\"examples/resources/mxWorkflow\"/>\n```\nThe above element will load examples/resources/mxWorkflow.properties as well as the language specific file for the current language, if it exists.\n\nValues may contain placeholders of the form {1}...{n} where each placeholder is replaced with the value of the corresponding array element in the params argument passed to `<mxResources.get>`. The placeholder {1} maps to the first element in the array (at index 0).\n\nSee `<mxClient.language>` for more information on specifying the default language or disabling all loading of resources.\n\nLines that start with a # sign will be ignored."
+    },
+    "classDef": {
+      "isAbstract": false,
+      "constructors": [],
+      "properties": [
+        {
+          "jsDoc": {
+            "doc": "Object that maps from keys to values."
+          },
+          "readonly": false,
+          "optional": false,
+          "isAbstract": false,
+          "isStatic": false,
+          "name": "resources",
+          "location": {
+            "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxResources.ts",
+            "line": 25,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Specifies the extension used for language files. Default is `<mxResourceExtension>`."
+          },
+          "readonly": false,
+          "optional": false,
+          "isAbstract": false,
+          "isStatic": false,
+          "name": "extension",
+          "location": {
+            "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxResources.ts",
+            "line": 30,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Specifies whether or not values in resource files are encoded with \\u or percentage. Default is `false`."
+          },
+          "readonly": false,
+          "optional": false,
+          "isAbstract": false,
+          "isStatic": false,
+          "name": "resourcesEncoded",
+          "location": {
+            "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxResources.ts",
+            "line": 35,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Specifies if the default file for a given basename should be loaded. Default is `true`."
+          },
+          "readonly": false,
+          "optional": false,
+          "isAbstract": false,
+          "isStatic": false,
+          "name": "loadDefaultBundle",
+          "location": {
+            "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxResources.ts",
+            "line": 40,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Specifies if the specific language file file for a given basename should be loaded. Default is `true`."
+          },
+          "readonly": false,
+          "optional": false,
+          "isAbstract": false,
+          "isStatic": false,
+          "name": "loadDefaultBundle",
+          "location": {
+            "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxResources.ts",
+            "line": 45,
+            "col": 2
+          }
+        }
+      ],
+      "indexSignatures": [],
+      "methods": [
+        {
+          "jsDoc": {
+            "doc": "Hook for subclassers to disable support for a given language. This implementation returns true if lan is in `<mxClient.languages>`.",
+            "tags": [
+              {
+                "kind": "param",
+                "name": "lan",
+                "doc": "The current language."
+              }
+            ]
+          },
+          "optional": false,
+          "isAbstract": false,
+          "isStatic": false,
+          "name": "isLanguageSupported",
+          "kind": "method",
+          "functionDef": {
+            "params": [
+              {
+                "kind": "identifier",
+                "name": "lan",
+                "optional": false
+              }
+            ],
+            "returnType": {
+              "repr": "any",
+              "kind": "keyword",
+              "keyword": "any"
+            },
+            "hasBody": true,
+            "isAsync": false,
+            "isGenerator": false,
+            "typeParams": []
+          },
+          "location": {
+            "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxResources.ts",
+            "line": 51,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Hook for subclassers to return the URL for the special bundle. This implementation returns basename + `<extension>` or null if `<loadDefaultBundle>` is false.",
+            "tags": [
+              {
+                "kind": "param",
+                "name": "basename",
+                "doc": "The basename for which the file should be loaded."
+              },
+              {
+                "kind": "param",
+                "name": "lan",
+                "doc": "The current language."
+              }
+            ]
+          },
+          "optional": false,
+          "isAbstract": false,
+          "isStatic": false,
+          "name": "getDefaultBundle",
+          "kind": "method",
+          "functionDef": {
+            "params": [
+              {
+                "kind": "identifier",
+                "name": "basename",
+                "optional": false
+              },
+              {
+                "kind": "identifier",
+                "name": "lan",
+                "optional": false
+              }
+            ],
+            "returnType": {
+              "repr": "any",
+              "kind": "keyword",
+              "keyword": "any"
+            },
+            "hasBody": true,
+            "isAsync": false,
+            "isGenerator": false,
+            "typeParams": []
+          },
+          "location": {
+            "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxResources.ts",
+            "line": 58,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Hook for subclassers to return the URL for the special bundle. This implementation returns basename + '_' + lan + `<extension>` or null if `<loadSpecialBundle>` is false or lan equals `<mxClient.defaultLanguage>`.\n\nIf `<mxResources.languages>` is not null and `<mxClient.language>` contains a dash, then this method checks if `<isLanguageSupported>` returns true for the full language (including the dash). If that returns false the first part of the language (up to the dash) will be tried as an extension.\n\nIf `<mxResources.language>` is null then the first part of the language is used to maintain backwards compatibility.",
+            "tags": [
+              {
+                "kind": "param",
+                "name": "basename",
+                "doc": "The basename for which the file should be loaded."
+              },
+              {
+                "kind": "param",
+                "name": "lan",
+                "doc": "The language for which the file should be loaded."
+              }
+            ]
+          },
+          "optional": false,
+          "isAbstract": false,
+          "isStatic": false,
+          "name": "getSpecialBundle",
+          "kind": "method",
+          "functionDef": {
+            "params": [
+              {
+                "kind": "identifier",
+                "name": "basename",
+                "optional": false
+              },
+              {
+                "kind": "identifier",
+                "name": "lan",
+                "optional": false
+              }
+            ],
+            "returnType": {
+              "repr": "any",
+              "kind": "keyword",
+              "keyword": "any"
+            },
+            "hasBody": true,
+            "isAsync": false,
+            "isGenerator": false,
+            "typeParams": []
+          },
+          "location": {
+            "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxResources.ts",
+            "line": 69,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Adds the default and current language properties file for the specified basename. Existing keys are overridden as new files are added. If no callback is used then the request is synchronous.\n\nAt application startup, additional resources may be  added using the following code:\n```\nmxResources.add('resources/editor');\n```",
+            "tags": [
+              {
+                "kind": "param",
+                "name": "basename",
+                "doc": "The basename for which the file should be loaded."
+              },
+              {
+                "kind": "param",
+                "name": "lan",
+                "doc": "The language for which the file should be loaded."
+              },
+              {
+                "kind": "param",
+                "name": "callback",
+                "doc": "Optional callback for asynchronous loading."
+              }
+            ]
+          },
+          "optional": false,
+          "isAbstract": false,
+          "isStatic": false,
+          "name": "add",
+          "kind": "method",
+          "functionDef": {
+            "params": [
+              {
+                "kind": "identifier",
+                "name": "basename",
+                "optional": false
+              },
+              {
+                "kind": "identifier",
+                "name": "lan",
+                "optional": false
+              },
+              {
+                "kind": "identifier",
+                "name": "callback",
+                "optional": true
+              }
+            ],
+            "returnType": {
+              "repr": "any",
+              "kind": "keyword",
+              "keyword": "any"
+            },
+            "hasBody": true,
+            "isAsync": false,
+            "isGenerator": false,
+            "typeParams": []
+          },
+          "location": {
+            "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxResources.ts",
+            "line": 82,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Parses the key, value pairs in the specified text and stores them as local resources.",
+            "tags": [
+              {
+                "kind": "param",
+                "name": "text"
+              }
+            ]
+          },
+          "optional": false,
+          "isAbstract": false,
+          "isStatic": false,
+          "name": "parse",
+          "kind": "method",
+          "functionDef": {
+            "params": [
+              {
+                "kind": "identifier",
+                "name": "text",
+                "optional": false
+              }
+            ],
+            "returnType": {
+              "repr": "any",
+              "kind": "keyword",
+              "keyword": "any"
+            },
+            "hasBody": true,
+            "isAsync": false,
+            "isGenerator": false,
+            "typeParams": []
+          },
+          "location": {
+            "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxResources.ts",
+            "line": 88,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Returns the value for the specified resource key.\n\nTo read the value for 'welomeMessage', use the following: \n```\nvar result = mxResources.get('welcomeMessage') || '';\n```\nThis would require an entry of the following form in one of the English language resource files: \n```\nwelcomeMessage=Welcome to mxGraph!\n```\nThe part behind the || is the string value to be used if the given resource is not available.",
+            "tags": [
+              {
+                "kind": "param",
+                "name": "key",
+                "doc": "String that represents the key of the resource to be returned."
+              },
+              {
+                "kind": "param",
+                "name": "params",
+                "doc": "Array of the values for the placeholders of the form {1}...{n} to be replaced with in the resulting string."
+              },
+              {
+                "kind": "param",
+                "name": "defaultValue",
+                "doc": "Optional string that specifies the default return value."
+              }
+            ]
+          },
+          "optional": false,
+          "isAbstract": false,
+          "isStatic": false,
+          "name": "get",
+          "kind": "method",
+          "functionDef": {
+            "params": [
+              {
+                "kind": "identifier",
+                "name": "key",
+                "optional": false
+              },
+              {
+                "kind": "identifier",
+                "name": "params",
+                "optional": false
+              },
+              {
+                "kind": "identifier",
+                "name": "defaultValue",
+                "optional": true
+              }
+            ],
+            "returnType": {
+              "repr": "any",
+              "kind": "keyword",
+              "keyword": "any"
+            },
+            "hasBody": true,
+            "isAsync": false,
+            "isGenerator": false,
+            "typeParams": []
+          },
+          "location": {
+            "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxResources.ts",
+            "line": 106,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Replaces the given placeholders with the given parameters.",
+            "tags": [
+              {
+                "kind": "param",
+                "name": "value",
+                "doc": "String that contains the placeholders."
+              },
+              {
+                "kind": "param",
+                "name": "params",
+                "doc": "Array of the values for the placeholders of the form {1}...{n} to be replaced with in the resulting string."
+              }
+            ]
+          },
+          "optional": false,
+          "isAbstract": false,
+          "isStatic": false,
+          "name": "replacePlaceholders",
+          "kind": "method",
+          "functionDef": {
+            "params": [
+              {
+                "kind": "identifier",
+                "name": "value",
+                "optional": false
+              },
+              {
+                "kind": "identifier",
+                "name": "params",
+                "optional": false
+              }
+            ],
+            "returnType": {
+              "repr": "any",
+              "kind": "keyword",
+              "keyword": "any"
+            },
+            "hasBody": true,
+            "isAsync": false,
+            "isGenerator": false,
+            "typeParams": []
+          },
+          "location": {
+            "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxResources.ts",
+            "line": 113,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Loads all required resources asynchronously. Use this to load the graph and editor resources if `<mxLoadResources>` is false.",
+            "tags": [
+              {
+                "kind": "param",
+                "name": "callback",
+                "doc": "Callback function for asynchronous loading."
+              }
+            ]
+          },
+          "optional": false,
+          "isAbstract": false,
+          "isStatic": false,
+          "name": "loadResources",
+          "kind": "method",
+          "functionDef": {
+            "params": [
+              {
+                "kind": "identifier",
+                "name": "callback",
+                "optional": false
+              }
+            ],
+            "returnType": {
+              "repr": "any",
+              "kind": "keyword",
+              "keyword": "any"
+            },
+            "hasBody": true,
+            "isAsync": false,
+            "isGenerator": false,
+            "typeParams": []
+          },
+          "location": {
+            "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxResources.ts",
+            "line": 119,
+            "col": 2
+          }
+        }
+      ],
+      "implements": [],
+      "typeParams": [],
+      "superTypeParams": []
+    }
+  }
+]

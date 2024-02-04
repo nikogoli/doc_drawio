@@ -31,7 +31,7 @@
               {
                 "kind": "param",
                 "name": "renderHint",
-                "doc": "Optional string that specifies the display accuracy and performance. Default is mxConstants.DIALECT_MIXEDHTML (for IE)."
+                "doc": "Optional string that specifies the display accuracy and performance. Default is `mxConstants`.`DIALECT_MIXEDHTML` (for IE)."
               },
               {
                 "kind": "param",
@@ -51,27 +51,27 @@
             {
               "kind": "identifier",
               "name": "container",
-              "optional": false
+              "optional": true
             },
             {
               "kind": "identifier",
               "name": "model",
-              "optional": false
+              "optional": true
             },
             {
               "kind": "identifier",
               "name": "renderHint",
-              "optional": false
+              "optional": true
             },
             {
               "kind": "identifier",
               "name": "stylesheet",
-              "optional": false
+              "optional": true
             },
             {
               "kind": "identifier",
               "name": "rendering",
-              "optional": false
+              "optional": true
             }
           ],
           "location": {
@@ -2343,7 +2343,7 @@
               {
                 "kind": "param",
                 "name": "ignoreFn",
-                "doc": "Optional function that takes a change and returns true if the change should be ignored. \\n"
+                "doc": "Optional function that takes a change and returns true if the change should be ignored."
               }
             ]
           },
@@ -2357,7 +2357,7 @@
               {
                 "kind": "identifier",
                 "name": "ignoreFn",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -2644,7 +2644,7 @@
               {
                 "kind": "identifier",
                 "name": "overlay",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -2710,7 +2710,7 @@
               {
                 "kind": "param",
                 "name": "cell",
-                "doc": "Optional `<mxCell>` that represents the root of the subtree to remove the overlays from. Default is the root in the model."
+                "doc": "Optional `<mxCell>` that represents the root of the subtree to remove the overlays from. Default is `the` root in the model."
               }
             ]
           },
@@ -2724,7 +2724,7 @@
               {
                 "kind": "identifier",
                 "name": "cell",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -2765,7 +2765,7 @@
               {
                 "kind": "param",
                 "name": "isSelect",
-                "doc": "Optional boolean indicating if a click on the overlay should select the corresponding cell. Default is false."
+                "doc": "Optional boolean indicating if a click on the overlay should select the corresponding cell. Default is `false`."
               }
             ]
           },
@@ -2789,12 +2789,12 @@
               {
                 "kind": "identifier",
                 "name": "img",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "isSelect",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -2834,7 +2834,7 @@
               {
                 "kind": "identifier",
                 "name": "evt",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -2884,7 +2884,7 @@
               {
                 "kind": "identifier",
                 "name": "evt",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -2934,7 +2934,7 @@
               {
                 "kind": "identifier",
                 "name": "evt",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -3034,7 +3034,7 @@
               {
                 "kind": "identifier",
                 "name": "evt",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -3222,7 +3222,7 @@
         },
         {
           "jsDoc": {
-            "doc": "Processes a doubleclick on an optional cell and fires a `<dblclick>` event. The event is fired initially. If the graph is enabled and the event has not been consumed, then `<edit>` is called with the given cell. The event is ignored if no cell was specified.\n\nExample for overriding this method.\n```\ngraph.dblClick = function(evt, cell)\n{\n  var mxe = new mxEventObject(mxEvent.DOUBLE_CLICK, 'event', evt, 'cell', cell);\n  this.fireEvent(mxe);\n  \n  if (this.isEnabled() && !mxEvent.isConsumed(evt) && !mxe.isConsumed())\n  {\n\t   mxUtils.alert('Hello, World!');\n    mxe.consume();\n  }\n}\n```\n\nExample listener for this event.\n```\ngraph.addListener(mxEvent.DOUBLE_CLICK, function(sender, evt)\n{\n  var cell = evt.getProperty('cell');\n  // do something with the cell and consume the\n  // event to prevent in-place editing from start\n});\n```",
+            "doc": "Processes a doubleclick on an optional cell and fires a `<dblclick>` event. The event is fired initially. If the graph is enabled and the event has not been consumed, then `<edit>` is called with the given cell. The event is ignored if no cell was specified.\n\nExample for overriding this method.\n```\ngraph.dblClick = function(evt, cell)\n{\n  var mxe = new mxEventObject(mxEvent.DOUBLE_CLICK, 'event', evt, 'cell', cell);\n  this.fireEvent(mxe);\n  \n  if (this.isEnabled() && !mxEvent.isConsumed(evt) && !mxe.isConsumed())\n  {\n\t   mxUtils.alert('Hello, World!');\n    mxe.consume();\n  }\n}\n```\nExample listener for this event.\n```\ngraph.addListener(mxEvent.DOUBLE_CLICK, function(sender, evt)\n{\n  var cell = evt.getProperty('cell');\n  // do something with the cell and consume the\n  // event to prevent in-place editing from start\n});\n```",
             "tags": [
               {
                 "kind": "param",
@@ -3251,7 +3251,7 @@
               {
                 "kind": "identifier",
                 "name": "cell",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -3266,7 +3266,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 905,
+            "line": 904,
             "col": 2
           }
         },
@@ -3301,7 +3301,7 @@
               {
                 "kind": "identifier",
                 "name": "state",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -3316,7 +3316,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 912,
+            "line": 911,
             "col": 2
           }
         },
@@ -3343,7 +3343,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 917,
+            "line": 916,
             "col": 2
           }
         },
@@ -3370,7 +3370,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 922,
+            "line": 921,
             "col": 2
           }
         },
@@ -3397,7 +3397,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 927,
+            "line": 926,
             "col": 2
           }
         },
@@ -3424,13 +3424,13 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 932,
+            "line": 931,
             "col": 2
           }
         },
         {
           "jsDoc": {
-            "doc": "Scales the graph such that the complete diagram fits into `<container>` and returns the current scale in the view. To fit an initial graph prior to rendering, set `<mxGraphView.rendering>` to false prior to changing the model and execute the following after changing the model.\n```\ngraph.fit();\ngraph.view.rendering = true;\ngraph.refresh();\n```\n\nTo fit and center the graph, the following code can be used.\n```\nvar margin = 2;\nvar max = 3;\n\nvar bounds = graph.getGraphBounds();\nvar cw = graph.container.clientWidth - margin;\nvar ch = graph.container.clientHeight - margin;\nvar w = bounds.width / graph.view.scale;\nvar h = bounds.height / graph.view.scale;\nvar s = Math.min(max, Math.min(cw / w, ch / h));\n\ngraph.view.scaleAndTranslate(s,\n  (margin + cw - w * s) / (2 * s) - bounds.x / graph.view.scale,\n  (margin + ch - h * s) / (2 * s) - bounds.y / graph.view.scale);\n```",
+            "doc": "Scales the graph such that the complete diagram fits into `<container>` and returns the current scale in the view. To fit an initial graph prior to rendering, set `<mxGraphView.rendering>` to false prior to changing the model and execute the following after changing the model.\n```\ngraph.fit();\ngraph.view.rendering = true;\ngraph.refresh();\n```\nTo fit and center the graph, the following code can be used.\n```\nvar margin = 2;\nvar max = 3;\n\nvar bounds = graph.getGraphBounds();\nvar cw = graph.container.clientWidth - margin;\nvar ch = graph.container.clientHeight - margin;\nvar w = bounds.width / graph.view.scale;\nvar h = bounds.height / graph.view.scale;\nvar s = Math.min(max, Math.min(cw / w, ch / h));\n\ngraph.view.scaleAndTranslate(s,\n  (margin + cw - w * s) / (2 * s) - bounds.x / graph.view.scale,\n  (margin + ch - h * s) / (2 * s) - bounds.y / graph.view.scale);\n```",
             "tags": [
               {
                 "kind": "param",
@@ -3440,27 +3440,27 @@
               {
                 "kind": "param",
                 "name": "keepOrigin",
-                "doc": "Optional boolean that specifies if the translate should be changed. Default is false."
+                "doc": "Optional boolean that specifies if the translate should be changed. Default is `false`."
               },
               {
                 "kind": "param",
                 "name": "margin",
-                "doc": "Optional margin in pixels. Default is 0."
+                "doc": "Optional margin in pixels. Default is `0`."
               },
               {
                 "kind": "param",
                 "name": "enabled",
-                "doc": "Optional boolean that specifies if the scale should be set or just returned. Default is true."
+                "doc": "Optional boolean that specifies if the scale should be set or just returned. Default is `true`."
               },
               {
                 "kind": "param",
                 "name": "ignoreWidth",
-                "doc": "Optional boolean that specifies if the width should be ignored. Default is false."
+                "doc": "Optional boolean that specifies if the width should be ignored. Default is `false`."
               },
               {
                 "kind": "param",
                 "name": "ignoreHeight",
-                "doc": "Optional boolean that specifies if the height should be ignored. Default is false."
+                "doc": "Optional boolean that specifies if the height should be ignored. Default is `false`."
               },
               {
                 "kind": "param",
@@ -3479,37 +3479,37 @@
               {
                 "kind": "identifier",
                 "name": "border",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "keepOrigin",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "margin",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "enabled",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "ignoreWidth",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "ignoreHeight",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "maxHeight",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -3524,7 +3524,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 966,
+            "line": 964,
             "col": 2
           }
         },
@@ -3551,7 +3551,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 971,
+            "line": 969,
             "col": 2
           }
         },
@@ -3578,7 +3578,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 976,
+            "line": 974,
             "col": 2
           }
         },
@@ -3638,7 +3638,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 984,
+            "line": 982,
             "col": 2
           }
         },
@@ -3673,7 +3673,7 @@
               {
                 "kind": "identifier",
                 "name": "ignoreState",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -3688,7 +3688,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 991,
+            "line": 989,
             "col": 2
           }
         },
@@ -3704,7 +3704,7 @@
               {
                 "kind": "param",
                 "name": "resolve",
-                "doc": "Optional boolean that specifies if any special values such as none or default, special short URIs, image keys etc should be resolved in the return value. Default is true."
+                "doc": "Optional boolean that specifies if any special values such as none or default, special short URIs, image keys etc should be resolved in the return value. Default is `true`."
               }
             ]
           },
@@ -3723,7 +3723,7 @@
               {
                 "kind": "identifier",
                 "name": "resolve",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -3738,7 +3738,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 998,
+            "line": 996,
             "col": 2
           }
         },
@@ -3765,7 +3765,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1003,
+            "line": 1001,
             "col": 2
           }
         },
@@ -3781,7 +3781,7 @@
               {
                 "kind": "param",
                 "name": "cells",
-                "doc": "Optional array of `<mxCells>` to set the style for. Default is the selection cells."
+                "doc": "Optional array of `<mxCells>` to set the style for. Default is `the` selection cells."
               }
             ]
           },
@@ -3800,7 +3800,7 @@
               {
                 "kind": "identifier",
                 "name": "cells",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -3815,7 +3815,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1010,
+            "line": 1008,
             "col": 2
           }
         },
@@ -3831,12 +3831,12 @@
               {
                 "kind": "param",
                 "name": "defaultValue",
-                "doc": "Optional boolean default value if no value is defined. Default is false."
+                "doc": "Optional boolean default value if no value is defined. Default is `false`."
               },
               {
                 "kind": "param",
                 "name": "cell",
-                "doc": "Optional `<mxCell>` whose style should be modified. Default is the selection cell."
+                "doc": "Optional `<mxCell>` whose style should be modified. Default is `the` selection cell."
               }
             ]
           },
@@ -3855,12 +3855,12 @@
               {
                 "kind": "identifier",
                 "name": "defaultValue",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "cell",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -3875,7 +3875,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1018,
+            "line": 1016,
             "col": 2
           }
         },
@@ -3891,12 +3891,12 @@
               {
                 "kind": "param",
                 "name": "defaultValue",
-                "doc": "Optional boolean default value if no value is defined. Default is false."
+                "doc": "Optional boolean default value if no value is defined. Default is `false`."
               },
               {
                 "kind": "param",
                 "name": "cells",
-                "doc": "Optional array of `<mxCells>` whose styles should be modified. Default is the selection cells."
+                "doc": "Optional array of `<mxCells>` whose styles should be modified. Default is `the` selection cells."
               }
             ]
           },
@@ -3915,12 +3915,12 @@
               {
                 "kind": "identifier",
                 "name": "defaultValue",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "cells",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -3935,7 +3935,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1026,
+            "line": 1024,
             "col": 2
           }
         },
@@ -3956,7 +3956,7 @@
               {
                 "kind": "param",
                 "name": "cells",
-                "doc": "Optional array of `<mxCells>` to change the style for. Default is the selection cells."
+                "doc": "Optional array of `<mxCells>` to change the style for. Default is `the` selection cells."
               }
             ]
           },
@@ -3980,7 +3980,7 @@
               {
                 "kind": "identifier",
                 "name": "cells",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -3995,7 +3995,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1034,
+            "line": 1032,
             "col": 2
           }
         },
@@ -4016,7 +4016,7 @@
               {
                 "kind": "param",
                 "name": "cells",
-                "doc": "Optional array of `<mxCells>` to change the style for. Default is the selection cells."
+                "doc": "Optional array of `<mxCells>` to change the style for. Default is `the` selection cells."
               }
             ]
           },
@@ -4040,7 +4040,7 @@
               {
                 "kind": "identifier",
                 "name": "cells",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -4055,7 +4055,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1042,
+            "line": 1040,
             "col": 2
           }
         },
@@ -4081,7 +4081,7 @@
               {
                 "kind": "param",
                 "name": "cells",
-                "doc": "Optional array of `<mxCells>` to change the style for. Default is the selection cells."
+                "doc": "Optional array of `<mxCells>` to change the style for. Default is `the` selection cells."
               }
             ]
           },
@@ -4110,7 +4110,7 @@
               {
                 "kind": "identifier",
                 "name": "cells",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -4125,7 +4125,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1051,
+            "line": 1049,
             "col": 2
           }
         },
@@ -4152,7 +4152,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1056,
+            "line": 1054,
             "col": 2
           }
         },
@@ -4197,7 +4197,7 @@
               {
                 "kind": "identifier",
                 "name": "param",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -4212,7 +4212,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1064,
+            "line": 1062,
             "col": 2
           }
         },
@@ -4252,7 +4252,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1086,
+            "line": 1084,
             "col": 2
           }
         },
@@ -4279,7 +4279,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1091,
+            "line": 1089,
             "col": 2
           }
         },
@@ -4306,7 +4306,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1096,
+            "line": 1094,
             "col": 2
           }
         },
@@ -4333,7 +4333,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1101,
+            "line": 1099,
             "col": 2
           }
         },
@@ -4378,7 +4378,7 @@
               {
                 "kind": "identifier",
                 "name": "increment",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -4393,7 +4393,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1109,
+            "line": 1107,
             "col": 2
           }
         },
@@ -4438,7 +4438,7 @@
               {
                 "kind": "identifier",
                 "name": "increment",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -4453,7 +4453,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1117,
+            "line": 1115,
             "col": 2
           }
         },
@@ -4469,7 +4469,7 @@
               {
                 "kind": "param",
                 "name": "border",
-                "doc": "Optional integer that specifies the border between the child area and the group bounds. Default is 0."
+                "doc": "Optional integer that specifies the border between the child area and the group bounds. Default is `0`."
               },
               {
                 "kind": "param",
@@ -4493,12 +4493,12 @@
               {
                 "kind": "identifier",
                 "name": "border",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "cells",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -4513,7 +4513,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1125,
+            "line": 1123,
             "col": 2
           }
         },
@@ -4540,7 +4540,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1130,
+            "line": 1128,
             "col": 2
           }
         },
@@ -4567,7 +4567,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1135,
+            "line": 1133,
             "col": 2
           }
         },
@@ -4594,7 +4594,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1152,
+            "line": 1150,
             "col": 2
           }
         },
@@ -4634,7 +4634,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1158,
+            "line": 1156,
             "col": 2
           }
         },
@@ -4661,7 +4661,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1163,
+            "line": 1161,
             "col": 2
           }
         },
@@ -4701,7 +4701,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1169,
+            "line": 1167,
             "col": 2
           }
         },
@@ -4741,7 +4741,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1175,
+            "line": 1173,
             "col": 2
           }
         },
@@ -4757,32 +4757,32 @@
               {
                 "kind": "param",
                 "name": "border",
-                "doc": "Optional border to be added in the group. Default is 0."
+                "doc": "Optional border to be added in the group. Default is `0`."
               },
               {
                 "kind": "param",
                 "name": "moveGroup",
-                "doc": "Optional boolean that allows the group to be moved. Default is false."
+                "doc": "Optional boolean that allows the group to be moved. Default is `false`."
               },
               {
                 "kind": "param",
                 "name": "topBorder",
-                "doc": "Optional top border to be added in the group. Default is 0."
+                "doc": "Optional top border to be added in the group. Default is `0`."
               },
               {
                 "kind": "param",
                 "name": "rightBorder",
-                "doc": "Optional top border to be added in the group. Default is 0."
+                "doc": "Optional top border to be added in the group. Default is `0`."
               },
               {
                 "kind": "param",
                 "name": "bottomBorder",
-                "doc": "Optional top border to be added in the group. Default is 0."
+                "doc": "Optional top border to be added in the group. Default is `0`."
               },
               {
                 "kind": "param",
                 "name": "leftBorder",
-                "doc": "Optional top border to be added in the group. Default is 0."
+                "doc": "Optional top border to be added in the group. Default is `0`."
               }
             ]
           },
@@ -4801,32 +4801,32 @@
               {
                 "kind": "identifier",
                 "name": "border",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "moveGroup",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "topBorder",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "rightBorder",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "bottomBorder",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "leftBorder",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -4841,7 +4841,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1187,
+            "line": 1185,
             "col": 2
           }
         },
@@ -4881,7 +4881,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1193,
+            "line": 1191,
             "col": 2
           }
         },
@@ -4897,7 +4897,7 @@
               {
                 "kind": "param",
                 "name": "allowInvalidEdges",
-                "doc": "Optional boolean that specifies if invalid edges should be cloned. Default is true."
+                "doc": "Optional boolean that specifies if invalid edges should be cloned. Default is `true`."
               },
               {
                 "kind": "param",
@@ -4907,7 +4907,7 @@
               {
                 "kind": "param",
                 "name": "keepPosition",
-                "doc": "Optional boolean indicating if the position of the cells should be updated to reflect the lost parent cell. Default is false."
+                "doc": "Optional boolean indicating if the position of the cells should be updated to reflect the lost parent cell. Default is `false`."
               }
             ]
           },
@@ -4926,17 +4926,17 @@
               {
                 "kind": "identifier",
                 "name": "allowInvalidEdges",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "mapping",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "keepPosition",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -4951,7 +4951,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1202,
+            "line": 1200,
             "col": 2
           }
         },
@@ -4967,7 +4967,7 @@
               {
                 "kind": "param",
                 "name": "allowInvalidEdges",
-                "doc": "Optional boolean that specifies if invalid edges should be cloned. Default is true."
+                "doc": "Optional boolean that specifies if invalid edges should be cloned. Default is `true`."
               },
               {
                 "kind": "param",
@@ -4977,7 +4977,7 @@
               {
                 "kind": "param",
                 "name": "keepPosition",
-                "doc": "Optional boolean indicating if the position of the cells should be updated to reflect the lost parent cell. Default is false."
+                "doc": "Optional boolean indicating if the position of the cells should be updated to reflect the lost parent cell. Default is `false`."
               }
             ]
           },
@@ -4996,17 +4996,17 @@
               {
                 "kind": "identifier",
                 "name": "allowInvalidEdges",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "mapping",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "keepPosition",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -5021,13 +5021,13 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1211,
+            "line": 1209,
             "col": 2
           }
         },
         {
           "jsDoc": {
-            "doc": "Adds a new vertex into the given parent `<mxCell>` using value as the user object and the given coordinates as the `<mxGeometry>` of the new vertex. The id and style are used for the respective properties of the new `<mxCell>`, which is returned.\n\nWhen adding new vertices from a mouse event, one should take into account the offset of the graph container and the scale and translation of the view in order to find the correct unscaled, untranslated coordinates using `<mxGraph.getPointForEvent>` as follows:\n```\nvar pt = graph.getPointForEvent(evt);\nvar parent = graph.getDefaultParent();\ngraph.insertVertex(parent, null,\n  \t\t'Hello, World!', x, y, 220, 30);\n```\n\nFor adding image cells, the style parameter can be assigned as\n```\nstylename;image=imageUrl\n```",
+            "doc": "Adds a new vertex into the given parent `<mxCell>` using value as the user object and the given coordinates as the `<mxGeometry>` of the new vertex. The id and style are used for the respective properties of the new `<mxCell>`, which is returned.\n\nWhen adding new vertices from a mouse event, one should take into account the offset of the graph container and the scale and translation of the view in order to find the correct unscaled, untranslated coordinates using `<mxGraph.getPointForEvent>` as follows:\n```\nvar pt = graph.getPointForEvent(evt);\nvar parent = graph.getDefaultParent();\ngraph.insertVertex(parent, null,\n  \t\t'Hello, World!', x, y, 220, 30);\n```\nFor adding image cells, the style parameter can be assigned as\n```\nstylename;image=imageUrl\n```\nSee `<mxGraph>` for more information on using images.",
             "tags": [
               {
                 "kind": "param",
@@ -5072,7 +5072,7 @@
               {
                 "kind": "param",
                 "name": "relative",
-                "doc": "Optional boolean that specifies if the geometry is relative. Default is false."
+                "doc": "Optional boolean that specifies if the geometry is relative. Default is `false`."
               }
             ]
           },
@@ -5091,7 +5091,7 @@
               {
                 "kind": "identifier",
                 "name": "id",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
@@ -5121,12 +5121,12 @@
               {
                 "kind": "identifier",
                 "name": "style",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "relative",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -5141,7 +5141,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1238,
+            "line": 1236,
             "col": 2
           }
         },
@@ -5168,7 +5168,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1243,
+            "line": 1241,
             "col": 2
           }
         },
@@ -5223,7 +5223,7 @@
               {
                 "kind": "identifier",
                 "name": "id",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
@@ -5243,7 +5243,7 @@
               {
                 "kind": "identifier",
                 "name": "style",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -5258,7 +5258,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1254,
+            "line": 1252,
             "col": 2
           }
         },
@@ -5285,7 +5285,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1259,
+            "line": 1257,
             "col": 2
           }
         },
@@ -5316,7 +5316,7 @@
               {
                 "kind": "param",
                 "name": "index",
-                "doc": "Optional index to insert the cells at. Default is to append."
+                "doc": "Optional index to insert the cells at. Default is `to` append."
               }
             ]
           },
@@ -5340,17 +5340,17 @@
               {
                 "kind": "identifier",
                 "name": "source",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "target",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "index",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -5365,7 +5365,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1269,
+            "line": 1267,
             "col": 2
           }
         },
@@ -5386,7 +5386,7 @@
               {
                 "kind": "param",
                 "name": "index",
-                "doc": "Optional index to insert the cells at. Default is to append."
+                "doc": "Optional index to insert the cells at. Default is `to` append."
               },
               {
                 "kind": "param",
@@ -5420,17 +5420,17 @@
               {
                 "kind": "identifier",
                 "name": "index",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "source",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "target",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -5445,7 +5445,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1279,
+            "line": 1277,
             "col": 2
           }
         },
@@ -5466,7 +5466,7 @@
               {
                 "kind": "param",
                 "name": "index",
-                "doc": "Optional index to insert the cells at. Default is to append."
+                "doc": "Optional index to insert the cells at. Default is `to` append."
               },
               {
                 "kind": "param",
@@ -5481,7 +5481,7 @@
               {
                 "kind": "param",
                 "name": "absolute",
-                "doc": "Optional boolean indicating of cells should be kept at their absolute position. Default is false."
+                "doc": "Optional boolean indicating of cells should be kept at their absolute position. Default is `false`."
               }
             ]
           },
@@ -5505,22 +5505,22 @@
               {
                 "kind": "identifier",
                 "name": "index",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "source",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "target",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "absolute",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -5535,7 +5535,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1290,
+            "line": 1288,
             "col": 2
           }
         },
@@ -5562,7 +5562,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1295,
+            "line": 1293,
             "col": 2
           }
         },
@@ -5578,7 +5578,7 @@
               {
                 "kind": "param",
                 "name": "recurse",
-                "doc": "Optional boolean which specifies if all descendants should be autosized. Default is true."
+                "doc": "Optional boolean which specifies if all descendants should be autosized. Default is `true`."
               }
             ]
           },
@@ -5597,7 +5597,7 @@
               {
                 "kind": "identifier",
                 "name": "recurse",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -5612,7 +5612,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1302,
+            "line": 1300,
             "col": 2
           }
         },
@@ -5628,7 +5628,7 @@
               {
                 "kind": "param",
                 "name": "includeEdges",
-                "doc": "Optional boolean which specifies if all connected edges should be removed as well. Default is true."
+                "doc": "Optional boolean which specifies if all connected edges should be removed as well. Default is `true`."
               }
             ]
           },
@@ -5647,7 +5647,7 @@
               {
                 "kind": "identifier",
                 "name": "includeEdges",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -5662,7 +5662,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1309,
+            "line": 1307,
             "col": 2
           }
         },
@@ -5702,7 +5702,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1315,
+            "line": 1313,
             "col": 2
           }
         },
@@ -5777,12 +5777,12 @@
               {
                 "kind": "identifier",
                 "name": "dx",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "dy",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
@@ -5797,7 +5797,7 @@
               {
                 "kind": "identifier",
                 "name": "parent",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -5812,7 +5812,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1328,
+            "line": 1326,
             "col": 2
           }
         },
@@ -5833,7 +5833,7 @@
               {
                 "kind": "param",
                 "name": "includeEdges",
-                "doc": "Optional boolean indicating if the visible state of all connected edges should be changed as well. Default is true."
+                "doc": "Optional boolean indicating if the visible state of all connected edges should be changed as well. Default is `true`."
               }
             ]
           },
@@ -5857,7 +5857,7 @@
               {
                 "kind": "identifier",
                 "name": "includeEdges",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -5872,7 +5872,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1336,
+            "line": 1334,
             "col": 2
           }
         },
@@ -5922,7 +5922,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1343,
+            "line": 1341,
             "col": 2
           }
         },
@@ -5938,7 +5938,7 @@
               {
                 "kind": "param",
                 "name": "recurse",
-                "doc": "Optional boolean indicating if the collapsed state of all descendants should be set. Default is false."
+                "doc": "Optional boolean indicating if the collapsed state of all descendants should be set. Default is `false`."
               },
               {
                 "kind": "param",
@@ -5948,7 +5948,7 @@
               {
                 "kind": "param",
                 "name": "checkFoldable",
-                "doc": "Optional boolean indicating of isCellFoldable should be checked. Default is false."
+                "doc": "Optional boolean indicating of isCellFoldable should be checked. Default is `false`."
               },
               {
                 "kind": "param",
@@ -5972,7 +5972,7 @@
               {
                 "kind": "identifier",
                 "name": "recurse",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
@@ -5982,12 +5982,12 @@
               {
                 "kind": "identifier",
                 "name": "checkFoldable",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "evt",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -6002,7 +6002,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1353,
+            "line": 1351,
             "col": 2
           }
         },
@@ -6028,7 +6028,7 @@
               {
                 "kind": "param",
                 "name": "checkFoldable",
-                "doc": "Optional boolean indicating of isCellFoldable should be checked. Default is false."
+                "doc": "Optional boolean indicating of isCellFoldable should be checked. Default is `false`."
               }
             ]
           },
@@ -6057,7 +6057,7 @@
               {
                 "kind": "identifier",
                 "name": "checkFoldable",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -6072,7 +6072,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1362,
+            "line": 1360,
             "col": 2
           }
         },
@@ -6122,7 +6122,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1369,
+            "line": 1367,
             "col": 2
           }
         },
@@ -6182,7 +6182,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1377,
+            "line": 1375,
             "col": 2
           }
         },
@@ -6209,7 +6209,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1382,
+            "line": 1380,
             "col": 2
           }
         },
@@ -6236,7 +6236,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1387,
+            "line": 1385,
             "col": 2
           }
         },
@@ -6252,7 +6252,7 @@
               {
                 "kind": "param",
                 "name": "ignoreChildren",
-                "doc": "Boolean indicating if children should be ignored. Default is false."
+                "doc": "Boolean indicating if children should be ignored. Default is `false`."
               }
             ]
           },
@@ -6286,7 +6286,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1394,
+            "line": 1392,
             "col": 2
           }
         },
@@ -6302,7 +6302,7 @@
               {
                 "kind": "param",
                 "name": "ignoreChildren",
-                "doc": "Boolean indicating if children should be ignored. Default is false."
+                "doc": "Boolean indicating if children should be ignored. Default is `false`."
               }
             ]
           },
@@ -6336,7 +6336,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1401,
+            "line": 1399,
             "col": 2
           }
         },
@@ -6371,7 +6371,7 @@
               {
                 "kind": "identifier",
                 "name": "textWidth",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -6386,7 +6386,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1423,
+            "line": 1421,
             "col": 2
           }
         },
@@ -6436,7 +6436,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1430,
+            "line": 1428,
             "col": 2
           }
         },
@@ -6486,7 +6486,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1437,
+            "line": 1435,
             "col": 2
           }
         },
@@ -6531,7 +6531,7 @@
               {
                 "kind": "identifier",
                 "name": "recurse",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -6546,7 +6546,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1476,
+            "line": 1474,
             "col": 2
           }
         },
@@ -6601,7 +6601,7 @@
               {
                 "kind": "identifier",
                 "name": "recurse",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -6616,7 +6616,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1485,
+            "line": 1483,
             "col": 2
           }
         },
@@ -6666,7 +6666,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1492,
+            "line": 1490,
             "col": 2
           }
         },
@@ -6706,7 +6706,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1498,
+            "line": 1496,
             "col": 2
           }
         },
@@ -6776,7 +6776,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1507,
+            "line": 1505,
             "col": 2
           }
         },
@@ -6816,7 +6816,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1513,
+            "line": 1511,
             "col": 2
           }
         },
@@ -6832,12 +6832,12 @@
               {
                 "kind": "param",
                 "name": "dx",
-                "doc": "Integer that specifies the x-coordinate of the vector. Default is 0."
+                "doc": "Integer that specifies the x-coordinate of the vector. Default is `0`."
               },
               {
                 "kind": "param",
                 "name": "dy",
-                "doc": "Integer that specifies the y-coordinate of the vector. Default is 0."
+                "doc": "Integer that specifies the y-coordinate of the vector. Default is `0`."
               },
               {
                 "kind": "param",
@@ -6891,7 +6891,7 @@
               {
                 "kind": "identifier",
                 "name": "mapping",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -6906,7 +6906,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1524,
+            "line": 1522,
             "col": 2
           }
         },
@@ -6922,17 +6922,17 @@
               {
                 "kind": "param",
                 "name": "dx",
-                "doc": "Integer that specifies the x-coordinate of the vector. Default is 0."
+                "doc": "Integer that specifies the x-coordinate of the vector. Default is `0`."
               },
               {
                 "kind": "param",
                 "name": "dy",
-                "doc": "Integer that specifies the y-coordinate of the vector. Default is 0."
+                "doc": "Integer that specifies the y-coordinate of the vector. Default is `0`."
               },
               {
                 "kind": "param",
                 "name": "clone",
-                "doc": "Boolean indicating if the cells should be cloned. Default is false."
+                "doc": "Boolean indicating if the cells should be cloned. Default is `false`."
               },
               {
                 "kind": "param",
@@ -6991,7 +6991,7 @@
               {
                 "kind": "identifier",
                 "name": "mapping",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -7006,7 +7006,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1541,
+            "line": 1539,
             "col": 2
           }
         },
@@ -7033,7 +7033,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1546,
+            "line": 1544,
             "col": 2
           }
         },
@@ -7060,7 +7060,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1551,
+            "line": 1549,
             "col": 2
           }
         },
@@ -7100,7 +7100,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1557,
+            "line": 1555,
             "col": 2
           }
         },
@@ -7127,7 +7127,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1562,
+            "line": 1560,
             "col": 2
           }
         },
@@ -7143,7 +7143,7 @@
               {
                 "kind": "param",
                 "name": "sizeFirst",
-                "doc": "Specifies if the size should be changed first. Default is true."
+                "doc": "Specifies if the size should be changed first. Default is `true`."
               }
             ]
           },
@@ -7177,7 +7177,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1569,
+            "line": 1567,
             "col": 2
           }
         },
@@ -7217,7 +7217,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1575,
+            "line": 1573,
             "col": 2
           }
         },
@@ -7257,7 +7257,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1581,
+            "line": 1579,
             "col": 2
           }
         },
@@ -7284,7 +7284,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1586,
+            "line": 1584,
             "col": 2
           }
         },
@@ -7334,7 +7334,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1593,
+            "line": 1591,
             "col": 2
           }
         },
@@ -7394,7 +7394,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1601,
+            "line": 1599,
             "col": 2
           }
         },
@@ -7449,7 +7449,7 @@
               {
                 "kind": "identifier",
                 "name": "constraint",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -7464,7 +7464,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1610,
+            "line": 1608,
             "col": 2
           }
         },
@@ -7514,7 +7514,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1617,
+            "line": 1615,
             "col": 2
           }
         },
@@ -7569,7 +7569,7 @@
               {
                 "kind": "identifier",
                 "name": "constraint",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -7584,7 +7584,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1626,
+            "line": 1624,
             "col": 2
           }
         },
@@ -7654,7 +7654,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1635,
+            "line": 1633,
             "col": 2
           }
         },
@@ -7694,7 +7694,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1641,
+            "line": 1639,
             "col": 2
           }
         },
@@ -7721,7 +7721,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1646,
+            "line": 1644,
             "col": 2
           }
         },
@@ -7761,7 +7761,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1672,
+            "line": 1670,
             "col": 2
           }
         },
@@ -7801,7 +7801,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1688,
+            "line": 1686,
             "col": 2
           }
         },
@@ -7851,7 +7851,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1695,
+            "line": 1693,
             "col": 2
           }
         },
@@ -7891,7 +7891,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1701,
+            "line": 1699,
             "col": 2
           }
         },
@@ -7902,7 +7902,7 @@
               {
                 "kind": "param",
                 "name": "cell",
-                "doc": "Optional `<mxCell>` to be used as the new root. Default is the selection cell."
+                "doc": "Optional `<mxCell>` to be used as the new root. Default is `the` selection cell."
               }
             ]
           },
@@ -7916,7 +7916,7 @@
               {
                 "kind": "identifier",
                 "name": "cell",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -7931,7 +7931,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1707,
+            "line": 1705,
             "col": 2
           }
         },
@@ -7958,7 +7958,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1712,
+            "line": 1710,
             "col": 2
           }
         },
@@ -7985,7 +7985,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1717,
+            "line": 1715,
             "col": 2
           }
         },
@@ -8025,7 +8025,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1723,
+            "line": 1721,
             "col": 2
           }
         },
@@ -8052,7 +8052,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1728,
+            "line": 1726,
             "col": 2
           }
         },
@@ -8068,12 +8068,12 @@
               {
                 "kind": "param",
                 "name": "includeEdge",
-                "doc": "Optional boolean that specifies if the bounds of the connected edges should be included. Default is false."
+                "doc": "Optional boolean that specifies if the bounds of the connected edges should be included. Default is `false`."
               },
               {
                 "kind": "param",
                 "name": "includeDescendants",
-                "doc": "Optional boolean that specifies if the bounds of all descendants should be included. Default is false."
+                "doc": "Optional boolean that specifies if the bounds of all descendants should be included. Default is `false`."
               }
             ]
           },
@@ -8092,12 +8092,12 @@
               {
                 "kind": "identifier",
                 "name": "includeEdge",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "includeDescendants",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -8112,13 +8112,13 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1736,
+            "line": 1734,
             "col": 2
           }
         },
         {
           "jsDoc": {
-            "doc": "Returns the bounding box for the geometries of the vertices in the given array of cells. This can be used to find the graph bounds during a layout operation (ie. before the last endUpdate) as follows:\n```\nvar cells = graph.getChildCells(graph.getDefaultParent(), true, true);\nvar bounds = graph.getBoundingBoxFromGeometry(cells, true);\n```\n\nThis can then be used to move cells to the origin:\n```\nif (bounds.x < 0 || bounds.y < 0)\n{\n  graph.moveCells(cells, -Math.min(bounds.x, 0), -Math.min(bounds.y, 0))\n}\n```\n\nOr to translate the graph view:\n```\nif (bounds.x < 0 || bounds.y < 0)\n{\n  graph.view.setTranslate(-Math.min(bounds.x, 0), -Math.min(bounds.y, 0));\n}\n```",
+            "doc": "Returns the bounding box for the geometries of the vertices in the given array of cells. This can be used to find the graph bounds during a layout operation (ie. before the last endUpdate) as follows:\n```\nvar cells = graph.getChildCells(graph.getDefaultParent(), true, true);\nvar bounds = graph.getBoundingBoxFromGeometry(cells, true);\n```\nThis can then be used to move cells to the origin:\n```\nif (bounds.x < 0 || bounds.y < 0)\n{\n  graph.moveCells(cells, -Math.min(bounds.x, 0), -Math.min(bounds.y, 0))\n}\n```\nOr to translate the graph view:\n```\nif (bounds.x < 0 || bounds.y < 0)\n{\n  graph.view.setTranslate(-Math.min(bounds.x, 0), -Math.min(bounds.y, 0));\n}\n```",
             "tags": [
               {
                 "kind": "param",
@@ -8128,7 +8128,7 @@
               {
                 "kind": "param",
                 "name": "includeEdges",
-                "doc": "Specifies if edge bounds should be included by computing the bounding box for all points in geometry. Default is false."
+                "doc": "Specifies if edge bounds should be included by computing the bounding box for all points in geometry. Default is `false`."
               },
               {
                 "kind": "param",
@@ -8138,7 +8138,7 @@
               {
                 "kind": "param",
                 "name": "includeStrokeWidth",
-                "doc": "Optional boolean to indicate if the strokeWidth should be added to the bounding box. Default is false."
+                "doc": "Optional boolean to indicate if the strokeWidth should be added to the bounding box. Default is `false`."
               }
             ]
           },
@@ -8162,12 +8162,12 @@
               {
                 "kind": "identifier",
                 "name": "ancestors",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "includeStrokeWidth",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -8182,7 +8182,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1765,
+            "line": 1761,
             "col": 2
           }
         },
@@ -8207,7 +8207,7 @@
               {
                 "kind": "identifier",
                 "name": "cell",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -8222,7 +8222,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1771,
+            "line": 1767,
             "col": 2
           }
         },
@@ -8262,7 +8262,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1777,
+            "line": 1773,
             "col": 2
           }
         },
@@ -8289,7 +8289,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1782,
+            "line": 1778,
             "col": 2
           }
         },
@@ -8339,7 +8339,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1789,
+            "line": 1785,
             "col": 2
           }
         },
@@ -8366,7 +8366,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1794,
+            "line": 1790,
             "col": 2
           }
         },
@@ -8393,7 +8393,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1799,
+            "line": 1795,
             "col": 2
           }
         },
@@ -8420,7 +8420,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1804,
+            "line": 1800,
             "col": 2
           }
         },
@@ -8447,7 +8447,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1809,
+            "line": 1805,
             "col": 2
           }
         },
@@ -8458,22 +8458,22 @@
               {
                 "kind": "param",
                 "name": "horizontal",
-                "doc": "Optional boolean that specifies if the graph should be centered horizontally. Default is true."
+                "doc": "Optional boolean that specifies if the graph should be centered horizontally. Default is `true`."
               },
               {
                 "kind": "param",
                 "name": "vertical",
-                "doc": "Optional boolean that specifies if the graph should be centered vertically. Default is true."
+                "doc": "Optional boolean that specifies if the graph should be centered vertically. Default is `true`."
               },
               {
                 "kind": "param",
                 "name": "cx",
-                "doc": "Optional float that specifies the horizontal center. Default is 0.5."
+                "doc": "Optional float that specifies the horizontal center. Default is `0`.5."
               },
               {
                 "kind": "param",
                 "name": "cy",
-                "doc": "Optional float that specifies the vertical center. Default is 0.5."
+                "doc": "Optional float that specifies the vertical center. Default is `0`.5."
               }
             ]
           },
@@ -8487,22 +8487,22 @@
               {
                 "kind": "identifier",
                 "name": "horizontal",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "vertical",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "cx",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "cy",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -8517,7 +8517,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1818,
+            "line": 1814,
             "col": 2
           }
         },
@@ -8544,7 +8544,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1823,
+            "line": 1819,
             "col": 2
           }
         },
@@ -8584,7 +8584,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1831,
+            "line": 1827,
             "col": 2
           }
         },
@@ -8600,7 +8600,7 @@
               {
                 "kind": "param",
                 "name": "center",
-                "doc": "Optional boolean flag. Default is false."
+                "doc": "Optional boolean flag. Default is `false`."
               }
             ]
           },
@@ -8619,7 +8619,7 @@
               {
                 "kind": "identifier",
                 "name": "center",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -8634,7 +8634,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1845,
+            "line": 1841,
             "col": 2
           }
         },
@@ -8674,7 +8674,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1851,
+            "line": 1847,
             "col": 2
           }
         },
@@ -8714,7 +8714,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1857,
+            "line": 1853,
             "col": 2
           }
         },
@@ -8754,7 +8754,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1865,
+            "line": 1861,
             "col": 2
           }
         },
@@ -8794,7 +8794,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1873,
+            "line": 1869,
             "col": 2
           }
         },
@@ -8834,7 +8834,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1879,
+            "line": 1875,
             "col": 2
           }
         },
@@ -8874,7 +8874,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1885,
+            "line": 1881,
             "col": 2
           }
         },
@@ -8914,7 +8914,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1891,
+            "line": 1887,
             "col": 2
           }
         },
@@ -8941,7 +8941,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1896,
+            "line": 1892,
             "col": 2
           }
         },
@@ -8968,7 +8968,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1901,
+            "line": 1897,
             "col": 2
           }
         },
@@ -8995,7 +8995,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1906,
+            "line": 1902,
             "col": 2
           }
         },
@@ -9022,7 +9022,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1911,
+            "line": 1907,
             "col": 2
           }
         },
@@ -9049,7 +9049,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1916,
+            "line": 1912,
             "col": 2
           }
         },
@@ -9076,7 +9076,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1921,
+            "line": 1917,
             "col": 2
           }
         },
@@ -9103,7 +9103,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1926,
+            "line": 1922,
             "col": 2
           }
         },
@@ -9163,13 +9163,13 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1934,
+            "line": 1930,
             "col": 2
           }
         },
         {
           "jsDoc": {
-            "doc": "Returns the validation error message to be displayed when inserting or changing an edges' connectivity. A return value of null means the edge is valid, a return value of '' means it's not valid, but do not display an error message. Any other (non-empty) string returned from this method is displayed as an error message when trying to connect an edge to a source and target. This implementation uses the `<multiplicities>`, and checks `<multigraph>`, `<allowDanglingEdges>` and `<allowLoops>` to generate validation errors.\n\nFor extending this method with specific checks for source/target cells, the method can be extended as follows. Returning an empty string means the edge is invalid with no error message, a non-null string specifies the error message, and null means the edge is valid.\n```\ngraph.getEdgeValidationError = function(edge, source, target)\n{\n  if (source != null && target != null &&\n    this.model.getValue(source) != null &&\n    this.model.getValue(target) != null)\n  {\n    if (target is not valid for source)\n    {\n      return 'Invalid Target';\n    }\n  }\n  \n  // \"Supercall\"\n  return mxGraph.prototype.getEdgeValidationError.apply(this, arguments);\n}\n```",
+            "doc": "Returns the validation error message to be displayed when inserting or changing an edges' connectivity. A return value of null means the edge is valid, a return value of '' means it's not valid, but do not display an error message. Any other (non-empty) string returned from this method is displayed as an error message when trying to connect an edge to a source and target. This implementation uses the `<multiplicities>`, and checks `<multigraph>`, `<allowDanglingEdges>` and `<allowLoops>` to generate validation errors.\n\nFor extending this method with specific checks for source/target cells, the method can be extended as follows. Returning an empty string means the edge is invalid with no error message, a non-null string specifies the error message, and null means the edge is valid.\n```\ngraph.getEdgeValidationError = function(edge, source, target)\n{\n  if (source != null && target != null &&\n    this.model.getValue(source) != null &&\n    this.model.getValue(target) != null)\n  {\n    if (target is not valid for source)\n    {\n      return 'Invalid Target';\n    }\n  }\n  \n  // \"Supercall\"\n  return mxGraph.prototype.getEdgeValidationError.apply(this, arguments);\n}\n```\n  ",
             "tags": [
               {
                 "kind": "param",
@@ -9223,7 +9223,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1961,
+            "line": 1958,
             "col": 2
           }
         },
@@ -9283,7 +9283,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1969,
+            "line": 1966,
             "col": 2
           }
         },
@@ -9294,7 +9294,7 @@
               {
                 "kind": "param",
                 "name": "cell",
-                "doc": "Optional `<mxCell>` to start the validation recursion. Default is the graph root."
+                "doc": "Optional `<mxCell>` to start the validation recursion. Default is `the` graph root."
               },
               {
                 "kind": "param",
@@ -9313,7 +9313,7 @@
               {
                 "kind": "identifier",
                 "name": "cell",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
@@ -9333,7 +9333,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1976,
+            "line": 1973,
             "col": 2
           }
         },
@@ -9373,7 +9373,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1982,
+            "line": 1979,
             "col": 2
           }
         },
@@ -9423,7 +9423,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1989,
+            "line": 1986,
             "col": 2
           }
         },
@@ -9450,7 +9450,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 1994,
+            "line": 1991,
             "col": 2
           }
         },
@@ -9490,7 +9490,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2000,
+            "line": 1997,
             "col": 2
           }
         },
@@ -9517,13 +9517,13 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2005,
+            "line": 2002,
             "col": 2
           }
         },
         {
           "jsDoc": {
-            "doc": "Returns the textual representation for the given cell. This implementation returns the nodename or string-representation of the user object.\n\nThe following returns the label attribute from the cells user object if it is an XML node.\n```\ngraph.convertValueToString = function(cell)\n{\n  return cell.getAttribute('label');\n}\n```",
+            "doc": "Returns the textual representation for the given cell. This implementation returns the nodename or string-representation of the user object.\n\nThe following returns the label attribute from the cells user object if it is an XML node.\n```\ngraph.convertValueToString = function(cell)\n{\n  return cell.getAttribute('label');\n}\n```\nSee also: `<cellLabelChanged>`.",
             "tags": [
               {
                 "kind": "param",
@@ -9557,13 +9557,13 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2019,
+            "line": 2017,
             "col": 2
           }
         },
         {
           "jsDoc": {
-            "doc": "Returns a string or DOM node that represents the label for the given cell. This implementation uses `<convertValueToString>` if `<labelsVisible>` is true. Otherwise it returns an empty string.\n\nTo truncate a label to match the size of the cell, the following code can be used.\n```\ngraph.getLabel = function(cell)\n{\n  var label = mxGraph.prototype.getLabel.apply(this, arguments);\n\n  if (label != null && this.model.isVertex(cell))\n  {\n    var geo = this.getCellGeometry(cell);\n\n    if (geo != null)\n    {\n      var max = parseInt(geo.width / 8);\n\n      if (label.length > max)\n      {\n        label = label.substring(0, max)+'...';\n      }\n    }\n  } \n  return mxUtils.htmlEntities(label);\n}\n```\n\nA resize listener is needed in the graph to force a repaint of the label after a resize.\n```\ngraph.addListener(mxEvent.RESIZE_CELLS, function(sender, evt)\n{\n  var cells = evt.getProperty('cells');\n\n  for (var i = 0; i < cells.length; i++)\n  {\n    this.view.removeState(cells[i]);\n  }\n});\n```",
+            "doc": "Returns a string or DOM node that represents the label for the given cell. This implementation uses `<convertValueToString>` if `<labelsVisible>` is true. Otherwise it returns an empty string.\n\nTo truncate a label to match the size of the cell, the following code can be used.\n```\ngraph.getLabel = function(cell)\n{\n  var label = mxGraph.prototype.getLabel.apply(this, arguments);\n\n  if (label != null && this.model.isVertex(cell))\n  {\n    var geo = this.getCellGeometry(cell);\n\n    if (geo != null)\n    {\n      var max = parseInt(geo.width / 8);\n\n      if (label.length > max)\n      {\n        label = label.substring(0, max)+'...';\n      }\n    }\n  } \n  return mxUtils.htmlEntities(label);\n}\n```\nA resize listener is needed in the graph to force a repaint of the label after a resize.\n```\ngraph.addListener(mxEvent.RESIZE_CELLS, function(sender, evt)\n{\n  var cells = evt.getProperty('cells');\n\n  for (var i = 0; i < cells.length; i++)\n  {\n    this.view.removeState(cells[i]);\n  }\n});\n```",
             "tags": [
               {
                 "kind": "param",
@@ -9597,7 +9597,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2062,
+            "line": 2059,
             "col": 2
           }
         },
@@ -9637,7 +9637,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2068,
+            "line": 2065,
             "col": 2
           }
         },
@@ -9664,7 +9664,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2073,
+            "line": 2070,
             "col": 2
           }
         },
@@ -9691,13 +9691,13 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2078,
+            "line": 2075,
             "col": 2
           }
         },
         {
           "jsDoc": {
-            "doc": "This enables wrapping for HTML labels.\n\nReturns true if no white-space CSS style directive should be used for displaying the given cells label. This implementation returns true if `<mxConstants.STYLE_WHITE_SPACE>` in the style of the given cell is 'wrap'.\n\nThis is used as a workaround for IE ignoring the white-space directive of child elements if the directive appears in a parent element. It should be overridden to return true if a white-space directive is used in the HTML markup that represents the given cells label. In order for HTML markup to work in labels, `<isHtmlLabel>` must also return true for the given cell.\n```\ngraph.getLabel = function(cell)\n{\n  var tmp = mxGraph.prototype.getLabel.apply(this, arguments); // \"supercall\"\n  \n  if (this.model.isEdge(cell))\n  {\n    tmp = '<div style=\"width: 150px; white-space:normal;\">'+tmp+'</div>';\n  }\n  \n  return tmp;\n}\n\ngraph.isWrapping = function(state)\n{\n\t return this.model.isEdge(state.cell);\n}\n```",
+            "doc": "This enables wrapping for HTML labels.\n\nReturns true if no white-space CSS style directive should be used for displaying the given cells label. This implementation returns true if `<mxConstants.STYLE_WHITE_SPACE>` in the style of the given cell is 'wrap'.\n\nThis is used as a workaround for IE ignoring the white-space directive of child elements if the directive appears in a parent element. It should be overridden to return true if a white-space directive is used in the HTML markup that represents the given cells label. In order for HTML markup to work in labels, `<isHtmlLabel>` must also return true for the given cell.\n```\ngraph.getLabel = function(cell)\n{\n  var tmp = mxGraph.prototype.getLabel.apply(this, arguments); // \"supercall\"\n  \n  if (this.model.isEdge(cell))\n  {\n    tmp = '<div style=\"width: 150px; white-space:normal;\">'+tmp+'</div>';\n  }\n  \n  return tmp;\n}\n\ngraph.isWrapping = function(state)\n{\n\t return this.model.isEdge(state.cell);\n}\n```\nMakes sure no edge label is wider than 150 pixels, otherwise the content is wrapped. Note: No width must be specified for wrapped vertex labels as the vertex defines the width in its geometry.",
             "tags": [
               {
                 "kind": "param",
@@ -9731,7 +9731,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2106,
+            "line": 2104,
             "col": 2
           }
         },
@@ -9771,7 +9771,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2112,
+            "line": 2110,
             "col": 2
           }
         },
@@ -9841,13 +9841,13 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2121,
+            "line": 2119,
             "col": 2
           }
         },
         {
           "jsDoc": {
-            "doc": "Returns the string or DOM node to be used as the tooltip for the given cell. This implementation uses the cells getTooltip function if it exists, or else it returns `<convertValueToString>` for the cell.\n```\ngraph.getTooltipForCell = function(cell)\n{\n  return 'Hello, World!';\n}\n```",
+            "doc": "Returns the string or DOM node to be used as the tooltip for the given cell. This implementation uses the cells getTooltip function if it exists, or else it returns `<convertValueToString>` for the cell.\n```\ngraph.getTooltipForCell = function(cell)\n{\n  return 'Hello, World!';\n}\n```\nReplaces all tooltips with the string Hello, World!",
             "tags": [
               {
                 "kind": "param",
@@ -9881,7 +9881,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2133,
+            "line": 2132,
             "col": 2
           }
         },
@@ -9921,7 +9921,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2139,
+            "line": 2138,
             "col": 2
           }
         },
@@ -9961,7 +9961,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2145,
+            "line": 2144,
             "col": 2
           }
         },
@@ -10001,7 +10001,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2151,
+            "line": 2150,
             "col": 2
           }
         },
@@ -10041,7 +10041,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2157,
+            "line": 2156,
             "col": 2
           }
         },
@@ -10076,7 +10076,7 @@
               {
                 "kind": "identifier",
                 "name": "ignoreState",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -10091,7 +10091,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2164,
+            "line": 2163,
             "col": 2
           }
         },
@@ -10118,7 +10118,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2169,
+            "line": 2168,
             "col": 2
           }
         },
@@ -10153,7 +10153,7 @@
               {
                 "kind": "identifier",
                 "name": "ignoreState",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -10168,7 +10168,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2176,
+            "line": 2175,
             "col": 2
           }
         },
@@ -10208,7 +10208,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2182,
+            "line": 2181,
             "col": 2
           }
         },
@@ -10248,7 +10248,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2188,
+            "line": 2187,
             "col": 2
           }
         },
@@ -10288,7 +10288,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2194,
+            "line": 2193,
             "col": 2
           }
         },
@@ -10328,7 +10328,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2200,
+            "line": 2199,
             "col": 2
           }
         },
@@ -10368,7 +10368,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2206,
+            "line": 2205,
             "col": 2
           }
         },
@@ -10408,7 +10408,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2212,
+            "line": 2211,
             "col": 2
           }
         },
@@ -10448,7 +10448,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2218,
+            "line": 2217,
             "col": 2
           }
         },
@@ -10475,7 +10475,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2223,
+            "line": 2222,
             "col": 2
           }
         },
@@ -10515,7 +10515,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2229,
+            "line": 2228,
             "col": 2
           }
         },
@@ -10550,7 +10550,7 @@
               {
                 "kind": "identifier",
                 "name": "ignoreState",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -10565,7 +10565,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2236,
+            "line": 2235,
             "col": 2
           }
         },
@@ -10592,7 +10592,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2241,
+            "line": 2240,
             "col": 2
           }
         },
@@ -10632,7 +10632,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2247,
+            "line": 2246,
             "col": 2
           }
         },
@@ -10659,7 +10659,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2252,
+            "line": 2251,
             "col": 2
           }
         },
@@ -10699,7 +10699,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2258,
+            "line": 2257,
             "col": 2
           }
         },
@@ -10726,7 +10726,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2263,
+            "line": 2262,
             "col": 2
           }
         },
@@ -10766,7 +10766,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2269,
+            "line": 2268,
             "col": 2
           }
         },
@@ -10793,7 +10793,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2274,
+            "line": 2273,
             "col": 2
           }
         },
@@ -10820,7 +10820,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2279,
+            "line": 2278,
             "col": 2
           }
         },
@@ -10847,7 +10847,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2284,
+            "line": 2283,
             "col": 2
           }
         },
@@ -10874,7 +10874,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2289,
+            "line": 2288,
             "col": 2
           }
         },
@@ -10914,7 +10914,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2295,
+            "line": 2294,
             "col": 2
           }
         },
@@ -10954,7 +10954,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2301,
+            "line": 2300,
             "col": 2
           }
         },
@@ -10994,7 +10994,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2307,
+            "line": 2306,
             "col": 2
           }
         },
@@ -11021,7 +11021,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2312,
+            "line": 2311,
             "col": 2
           }
         },
@@ -11046,7 +11046,7 @@
               {
                 "kind": "identifier",
                 "name": "cell",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -11061,7 +11061,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2318,
+            "line": 2317,
             "col": 2
           }
         },
@@ -11088,7 +11088,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2323,
+            "line": 2322,
             "col": 2
           }
         },
@@ -11128,7 +11128,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2329,
+            "line": 2328,
             "col": 2
           }
         },
@@ -11155,7 +11155,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2334,
+            "line": 2333,
             "col": 2
           }
         },
@@ -11195,7 +11195,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2340,
+            "line": 2339,
             "col": 2
           }
         },
@@ -11222,7 +11222,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2345,
+            "line": 2344,
             "col": 2
           }
         },
@@ -11262,13 +11262,13 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2351,
+            "line": 2350,
             "col": 2
           }
         },
         {
           "jsDoc": {
-            "doc": "Returns true if the given cell is selectable. This implementation returns `<cellsSelectable>`.\n\nTo add a new style for making cells (un)selectable, use the following code.\n```\nmxGraph.prototype.isCellSelectable = function(cell)\n{\n  var style = this.getCurrentCellStyle(cell);\n  \n  return this.isCellsSelectable() && !this.isCellLocked(cell) && style['selectable'] != 0;\n};\n```\n\nYou can then use the new style as shown in this example.\n```\ngraph.insertVertex(parent, null, 'Hello,', 20, 20, 80, 30, 'selectable=0');\n```",
+            "doc": "Returns true if the given cell is selectable. This implementation returns `<cellsSelectable>`.\n\nTo add a new style for making cells (un)selectable, use the following code.\n```\nmxGraph.prototype.isCellSelectable = function(cell)\n{\n  var style = this.getCurrentCellStyle(cell);\n  \n  return this.isCellsSelectable() && !this.isCellLocked(cell) && style['selectable'] != 0;\n};\n```\nYou can then use the new style as shown in this example.\n```\ngraph.insertVertex(parent, null, 'Hello,', 20, 20, 80, 30, 'selectable=0');\n```",
             "tags": [
               {
                 "kind": "param",
@@ -11302,7 +11302,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2372,
+            "line": 2370,
             "col": 2
           }
         },
@@ -11329,7 +11329,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2377,
+            "line": 2375,
             "col": 2
           }
         },
@@ -11356,7 +11356,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2382,
+            "line": 2380,
             "col": 2
           }
         },
@@ -11383,7 +11383,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2387,
+            "line": 2385,
             "col": 2
           }
         },
@@ -11423,7 +11423,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2393,
+            "line": 2391,
             "col": 2
           }
         },
@@ -11450,7 +11450,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2398,
+            "line": 2396,
             "col": 2
           }
         },
@@ -11490,7 +11490,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2404,
+            "line": 2402,
             "col": 2
           }
         },
@@ -11530,7 +11530,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2410,
+            "line": 2408,
             "col": 2
           }
         },
@@ -11557,7 +11557,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2415,
+            "line": 2413,
             "col": 2
           }
         },
@@ -11597,7 +11597,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2421,
+            "line": 2419,
             "col": 2
           }
         },
@@ -11624,7 +11624,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2426,
+            "line": 2424,
             "col": 2
           }
         },
@@ -11664,7 +11664,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2432,
+            "line": 2430,
             "col": 2
           }
         },
@@ -11691,7 +11691,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2437,
+            "line": 2435,
             "col": 2
           }
         },
@@ -11731,7 +11731,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2443,
+            "line": 2441,
             "col": 2
           }
         },
@@ -11758,7 +11758,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2448,
+            "line": 2446,
             "col": 2
           }
         },
@@ -11798,7 +11798,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2454,
+            "line": 2452,
             "col": 2
           }
         },
@@ -11825,7 +11825,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2459,
+            "line": 2457,
             "col": 2
           }
         },
@@ -11865,7 +11865,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2465,
+            "line": 2463,
             "col": 2
           }
         },
@@ -11892,7 +11892,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2470,
+            "line": 2468,
             "col": 2
           }
         },
@@ -11919,7 +11919,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2475,
+            "line": 2473,
             "col": 2
           }
         },
@@ -11946,7 +11946,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2480,
+            "line": 2478,
             "col": 2
           }
         },
@@ -11973,7 +11973,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2485,
+            "line": 2483,
             "col": 2
           }
         },
@@ -12000,7 +12000,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2490,
+            "line": 2488,
             "col": 2
           }
         },
@@ -12027,7 +12027,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2495,
+            "line": 2493,
             "col": 2
           }
         },
@@ -12054,7 +12054,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2500,
+            "line": 2498,
             "col": 2
           }
         },
@@ -12081,7 +12081,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2505,
+            "line": 2503,
             "col": 2
           }
         },
@@ -12108,7 +12108,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2510,
+            "line": 2508,
             "col": 2
           }
         },
@@ -12148,7 +12148,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2516,
+            "line": 2514,
             "col": 2
           }
         },
@@ -12175,7 +12175,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2521,
+            "line": 2519,
             "col": 2
           }
         },
@@ -12215,7 +12215,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2527,
+            "line": 2525,
             "col": 2
           }
         },
@@ -12242,7 +12242,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2532,
+            "line": 2530,
             "col": 2
           }
         },
@@ -12282,7 +12282,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2538,
+            "line": 2536,
             "col": 2
           }
         },
@@ -12309,7 +12309,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2543,
+            "line": 2541,
             "col": 2
           }
         },
@@ -12349,7 +12349,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2549,
+            "line": 2547,
             "col": 2
           }
         },
@@ -12376,7 +12376,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2554,
+            "line": 2552,
             "col": 2
           }
         },
@@ -12416,7 +12416,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2560,
+            "line": 2558,
             "col": 2
           }
         },
@@ -12443,7 +12443,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2565,
+            "line": 2563,
             "col": 2
           }
         },
@@ -12483,7 +12483,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2571,
+            "line": 2569,
             "col": 2
           }
         },
@@ -12510,7 +12510,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2576,
+            "line": 2574,
             "col": 2
           }
         },
@@ -12550,7 +12550,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2582,
+            "line": 2580,
             "col": 2
           }
         },
@@ -12577,7 +12577,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2587,
+            "line": 2585,
             "col": 2
           }
         },
@@ -12617,7 +12617,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2593,
+            "line": 2591,
             "col": 2
           }
         },
@@ -12644,7 +12644,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2598,
+            "line": 2596,
             "col": 2
           }
         },
@@ -12684,7 +12684,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2604,
+            "line": 2602,
             "col": 2
           }
         },
@@ -12711,7 +12711,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2609,
+            "line": 2607,
             "col": 2
           }
         },
@@ -12751,7 +12751,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2615,
+            "line": 2613,
             "col": 2
           }
         },
@@ -12778,7 +12778,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2620,
+            "line": 2618,
             "col": 2
           }
         },
@@ -12818,7 +12818,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2626,
+            "line": 2624,
             "col": 2
           }
         },
@@ -12845,7 +12845,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2631,
+            "line": 2629,
             "col": 2
           }
         },
@@ -12885,7 +12885,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2637,
+            "line": 2635,
             "col": 2
           }
         },
@@ -12935,7 +12935,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2644,
+            "line": 2642,
             "col": 2
           }
         },
@@ -12975,7 +12975,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2650,
+            "line": 2648,
             "col": 2
           }
         },
@@ -13002,7 +13002,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2655,
+            "line": 2653,
             "col": 2
           }
         },
@@ -13042,7 +13042,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2661,
+            "line": 2659,
             "col": 2
           }
         },
@@ -13069,7 +13069,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2666,
+            "line": 2664,
             "col": 2
           }
         },
@@ -13109,7 +13109,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2672,
+            "line": 2670,
             "col": 2
           }
         },
@@ -13136,7 +13136,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2677,
+            "line": 2675,
             "col": 2
           }
         },
@@ -13176,7 +13176,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2683,
+            "line": 2681,
             "col": 2
           }
         },
@@ -13236,7 +13236,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2691,
+            "line": 2689,
             "col": 2
           }
         },
@@ -13263,7 +13263,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2696,
+            "line": 2694,
             "col": 2
           }
         },
@@ -13290,7 +13290,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2701,
+            "line": 2699,
             "col": 2
           }
         },
@@ -13330,7 +13330,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2707,
+            "line": 2705,
             "col": 2
           }
         },
@@ -13370,7 +13370,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2713,
+            "line": 2711,
             "col": 2
           }
         },
@@ -13420,7 +13420,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2720,
+            "line": 2718,
             "col": 2
           }
         },
@@ -13460,7 +13460,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2726,
+            "line": 2724,
             "col": 2
           }
         },
@@ -13487,7 +13487,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2731,
+            "line": 2729,
             "col": 2
           }
         },
@@ -13527,7 +13527,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2737,
+            "line": 2735,
             "col": 2
           }
         },
@@ -13567,7 +13567,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2743,
+            "line": 2741,
             "col": 2
           }
         },
@@ -13607,7 +13607,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2749,
+            "line": 2747,
             "col": 2
           }
         },
@@ -13647,7 +13647,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2755,
+            "line": 2753,
             "col": 2
           }
         },
@@ -13674,7 +13674,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2760,
+            "line": 2758,
             "col": 2
           }
         },
@@ -13714,7 +13714,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2766,
+            "line": 2764,
             "col": 2
           }
         },
@@ -13754,7 +13754,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2772,
+            "line": 2770,
             "col": 2
           }
         },
@@ -13781,7 +13781,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2777,
+            "line": 2775,
             "col": 2
           }
         },
@@ -13821,7 +13821,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2783,
+            "line": 2781,
             "col": 2
           }
         },
@@ -13848,7 +13848,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2788,
+            "line": 2786,
             "col": 2
           }
         },
@@ -13888,7 +13888,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2794,
+            "line": 2792,
             "col": 2
           }
         },
@@ -13915,7 +13915,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2799,
+            "line": 2797,
             "col": 2
           }
         },
@@ -13955,7 +13955,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2805,
+            "line": 2803,
             "col": 2
           }
         },
@@ -13995,7 +13995,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2811,
+            "line": 2809,
             "col": 2
           }
         },
@@ -14035,7 +14035,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2817,
+            "line": 2815,
             "col": 2
           }
         },
@@ -14075,7 +14075,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2823,
+            "line": 2821,
             "col": 2
           }
         },
@@ -14102,7 +14102,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2828,
+            "line": 2826,
             "col": 2
           }
         },
@@ -14129,7 +14129,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2833,
+            "line": 2831,
             "col": 2
           }
         },
@@ -14156,7 +14156,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2838,
+            "line": 2836,
             "col": 2
           }
         },
@@ -14183,7 +14183,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2843,
+            "line": 2841,
             "col": 2
           }
         },
@@ -14210,7 +14210,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2848,
+            "line": 2846,
             "col": 2
           }
         },
@@ -14237,7 +14237,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2853,
+            "line": 2851,
             "col": 2
           }
         },
@@ -14277,7 +14277,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2859,
+            "line": 2857,
             "col": 2
           }
         },
@@ -14317,7 +14317,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2865,
+            "line": 2863,
             "col": 2
           }
         },
@@ -14344,7 +14344,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2870,
+            "line": 2868,
             "col": 2
           }
         },
@@ -14384,7 +14384,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2876,
+            "line": 2874,
             "col": 2
           }
         },
@@ -14444,7 +14444,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2884,
+            "line": 2882,
             "col": 2
           }
         },
@@ -14504,7 +14504,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2892,
+            "line": 2890,
             "col": 2
           }
         },
@@ -14559,7 +14559,7 @@
               {
                 "kind": "identifier",
                 "name": "clone",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -14574,7 +14574,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2903,
+            "line": 2901,
             "col": 2
           }
         },
@@ -14601,7 +14601,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2908,
+            "line": 2906,
             "col": 2
           }
         },
@@ -14628,7 +14628,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2913,
+            "line": 2911,
             "col": 2
           }
         },
@@ -14668,7 +14668,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2919,
+            "line": 2917,
             "col": 2
           }
         },
@@ -14728,7 +14728,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2927,
+            "line": 2925,
             "col": 2
           }
         },
@@ -14749,17 +14749,17 @@
               {
                 "kind": "param",
                 "name": "parent",
-                "doc": "`<mxCell>` that should be used as the root of the recursion. Default is current root of the view or the root of the model."
+                "doc": "`<mxCell>` that should be used as the root of the recursion. Default is `current` root of the view or the root of the model."
               },
               {
                 "kind": "param",
                 "name": "vertices",
-                "doc": "Optional boolean indicating if vertices should be returned. Default is true."
+                "doc": "Optional boolean indicating if vertices should be returned. Default is `true`."
               },
               {
                 "kind": "param",
                 "name": "edges",
-                "doc": "Optional boolean indicating if edges should be returned. Default is true."
+                "doc": "Optional boolean indicating if edges should be returned. Default is `true`."
               },
               {
                 "kind": "param",
@@ -14793,17 +14793,17 @@
               {
                 "kind": "identifier",
                 "name": "vertices",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "edges",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "ignoreFn",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -14818,7 +14818,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2938,
+            "line": 2936,
             "col": 2
           }
         },
@@ -14878,7 +14878,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2946,
+            "line": 2944,
             "col": 2
           }
         },
@@ -14938,7 +14938,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2954,
+            "line": 2952,
             "col": 2
           }
         },
@@ -14978,7 +14978,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2960,
+            "line": 2958,
             "col": 2
           }
         },
@@ -15018,7 +15018,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2966,
+            "line": 2964,
             "col": 2
           }
         },
@@ -15034,12 +15034,12 @@
               {
                 "kind": "param",
                 "name": "vertices",
-                "doc": "Optional boolean that specifies if child vertices should be returned. Default is false."
+                "doc": "Optional boolean that specifies if child vertices should be returned. Default is `false`."
               },
               {
                 "kind": "param",
                 "name": "edges",
-                "doc": "Optional boolean that specifies if child edges should be returned. Default is false."
+                "doc": "Optional boolean that specifies if child edges should be returned. Default is `false`."
               }
             ]
           },
@@ -15058,12 +15058,12 @@
               {
                 "kind": "identifier",
                 "name": "vertices",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "edges",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -15078,7 +15078,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2974,
+            "line": 2972,
             "col": 2
           }
         },
@@ -15113,7 +15113,7 @@
               {
                 "kind": "identifier",
                 "name": "parent",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -15128,7 +15128,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2981,
+            "line": 2979,
             "col": 2
           }
         },
@@ -15163,7 +15163,7 @@
               {
                 "kind": "identifier",
                 "name": "parent",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -15178,7 +15178,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2988,
+            "line": 2986,
             "col": 2
           }
         },
@@ -15213,7 +15213,7 @@
               {
                 "kind": "identifier",
                 "name": "parent",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -15228,7 +15228,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 2995,
+            "line": 2993,
             "col": 2
           }
         },
@@ -15249,22 +15249,22 @@
               {
                 "kind": "param",
                 "name": "incoming",
-                "doc": "Optional boolean that specifies if incoming edges should be included in the result. Default is true."
+                "doc": "Optional boolean that specifies if incoming edges should be included in the result. Default is `true`."
               },
               {
                 "kind": "param",
                 "name": "outgoing",
-                "doc": "Optional boolean that specifies if outgoing edges should be included in the result. Default is true."
+                "doc": "Optional boolean that specifies if outgoing edges should be included in the result. Default is `true`."
               },
               {
                 "kind": "param",
                 "name": "includeLoops",
-                "doc": "Optional boolean that specifies if loops should be included in the result. Default is true."
+                "doc": "Optional boolean that specifies if loops should be included in the result. Default is `true`."
               },
               {
                 "kind": "param",
                 "name": "recurse",
-                "doc": "Optional boolean the specifies if the parent specified only  need be an ancestral parent, true, or the direct parent, false. Default is false"
+                "doc": "Optional boolean the specifies if the parent specified only  need be an ancestral parent, true, or the direct parent, false. Default is `false`"
               }
             ]
           },
@@ -15283,27 +15283,27 @@
               {
                 "kind": "identifier",
                 "name": "parent",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "incoming",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "outgoing",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "includeLoops",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "recurse",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -15318,7 +15318,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3006,
+            "line": 3004,
             "col": 2
           }
         },
@@ -15378,7 +15378,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3014,
+            "line": 3012,
             "col": 2
           }
         },
@@ -15399,12 +15399,12 @@
               {
                 "kind": "param",
                 "name": "sources",
-                "doc": "Optional boolean that specifies if source terminals should be included in the result. Default is true."
+                "doc": "Optional boolean that specifies if source terminals should be included in the result. Default is `true`."
               },
               {
                 "kind": "param",
                 "name": "targets",
-                "doc": "Optional boolean that specifies if targer terminals should be included in the result. Default is true."
+                "doc": "Optional boolean that specifies if targer terminals should be included in the result. Default is `true`."
               }
             ]
           },
@@ -15428,12 +15428,12 @@
               {
                 "kind": "identifier",
                 "name": "sources",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "targets",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -15448,7 +15448,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3023,
+            "line": 3021,
             "col": 2
           }
         },
@@ -15475,7 +15475,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3028,
+            "line": 3026,
             "col": 2
           }
         },
@@ -15491,7 +15491,7 @@
               {
                 "kind": "param",
                 "name": "addOffset",
-                "doc": "Optional boolean that specifies if the position should be offset by half of the `<gridSize>`. Default is true."
+                "doc": "Optional boolean that specifies if the position should be offset by half of the `<gridSize>`. Default is `true`."
               }
             ]
           },
@@ -15510,7 +15510,7 @@
               {
                 "kind": "identifier",
                 "name": "addOffset",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -15525,7 +15525,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3035,
+            "line": 3033,
             "col": 2
           }
         },
@@ -15556,7 +15556,7 @@
               {
                 "kind": "param",
                 "name": "parent",
-                "doc": "`<mxCell>` that should be used as the root of the recursion. Default is current root of the view or the root of the model."
+                "doc": "`<mxCell>` that should be used as the root of the recursion. Default is `current` root of the view or the root of the model."
               },
               {
                 "kind": "param",
@@ -15576,7 +15576,7 @@
               {
                 "kind": "param",
                 "name": "includeDescendants",
-                "doc": "Optional boolean flag to add descendants to the result. Default is false."
+                "doc": "Optional boolean flag to add descendants to the result. Default is `false`."
               }
             ]
           },
@@ -15615,22 +15615,22 @@
               {
                 "kind": "identifier",
                 "name": "result",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "intersection",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "ignoreFn",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "includeDescendants",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -15645,7 +15645,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3049,
+            "line": 3047,
             "col": 2
           }
         },
@@ -15700,7 +15700,7 @@
               {
                 "kind": "identifier",
                 "name": "parent",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
@@ -15725,7 +15725,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3059,
+            "line": 3057,
             "col": 2
           }
         },
@@ -15741,12 +15741,12 @@
               {
                 "kind": "param",
                 "name": "isolate",
-                "doc": "Optional boolean that specifies if edges should be ignored if the opposite end is not a child of the given parent cell. Default is false."
+                "doc": "Optional boolean that specifies if edges should be ignored if the opposite end is not a child of the given parent cell. Default is `false`."
               },
               {
                 "kind": "param",
                 "name": "invert",
-                "doc": "Optional boolean that specifies if outgoing or incoming edges should be counted for a tree root. If false then outgoing edges will be counted. Default is false."
+                "doc": "Optional boolean that specifies if outgoing or incoming edges should be counted for a tree root. If false then outgoing edges will be counted. Default is `false`."
               }
             ]
           },
@@ -15765,12 +15765,12 @@
               {
                 "kind": "identifier",
                 "name": "isolate",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "invert",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -15785,7 +15785,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3067,
+            "line": 3065,
             "col": 2
           }
         },
@@ -15801,7 +15801,7 @@
               {
                 "kind": "param",
                 "name": "directed",
-                "doc": "Optional boolean indicating if edges should only be traversed from source to target. Default is true."
+                "doc": "Optional boolean indicating if edges should only be traversed from source to target. Default is `true`."
               },
               {
                 "kind": "param",
@@ -15821,7 +15821,7 @@
               {
                 "kind": "param",
                 "name": "inverse",
-                "doc": "Optional boolean to traverse in inverse direction. Default is false. This is ignored if directed is false."
+                "doc": "Optional boolean to traverse in inverse direction. Default is `false`. This is ignored if directed is false."
               }
             ]
           },
@@ -15840,7 +15840,7 @@
               {
                 "kind": "identifier",
                 "name": "directed",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
@@ -15850,17 +15850,17 @@
               {
                 "kind": "identifier",
                 "name": "edge",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "visited",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "inverse",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -15875,7 +15875,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3086,
+            "line": 3084,
             "col": 2
           }
         },
@@ -15915,7 +15915,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3092,
+            "line": 3090,
             "col": 2
           }
         },
@@ -15942,7 +15942,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3097,
+            "line": 3095,
             "col": 2
           }
         },
@@ -15969,7 +15969,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3102,
+            "line": 3100,
             "col": 2
           }
         },
@@ -15996,7 +15996,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3107,
+            "line": 3105,
             "col": 2
           }
         },
@@ -16023,7 +16023,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3112,
+            "line": 3110,
             "col": 2
           }
         },
@@ -16050,7 +16050,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3117,
+            "line": 3115,
             "col": 2
           }
         },
@@ -16077,7 +16077,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3122,
+            "line": 3120,
             "col": 2
           }
         },
@@ -16117,7 +16117,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3128,
+            "line": 3126,
             "col": 2
           }
         },
@@ -16157,7 +16157,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3134,
+            "line": 3132,
             "col": 2
           }
         },
@@ -16197,7 +16197,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3140,
+            "line": 3138,
             "col": 2
           }
         },
@@ -16237,7 +16237,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3146,
+            "line": 3144,
             "col": 2
           }
         },
@@ -16277,7 +16277,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3152,
+            "line": 3150,
             "col": 2
           }
         },
@@ -16317,7 +16317,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3158,
+            "line": 3156,
             "col": 2
           }
         },
@@ -16367,7 +16367,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3165,
+            "line": 3163,
             "col": 2
           }
         },
@@ -16394,7 +16394,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3170,
+            "line": 3168,
             "col": 2
           }
         },
@@ -16421,7 +16421,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3175,
+            "line": 3173,
             "col": 2
           }
         },
@@ -16448,7 +16448,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3180,
+            "line": 3178,
             "col": 2
           }
         },
@@ -16475,7 +16475,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3185,
+            "line": 3183,
             "col": 2
           }
         },
@@ -16535,7 +16535,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3193,
+            "line": 3191,
             "col": 2
           }
         },
@@ -16551,7 +16551,7 @@
               {
                 "kind": "param",
                 "name": "descendants",
-                "doc": "Optional boolean specifying whether all descendants should be selected. Default is false."
+                "doc": "Optional boolean specifying whether all descendants should be selected. Default is `false`."
               }
             ]
           },
@@ -16565,12 +16565,12 @@
               {
                 "kind": "identifier",
                 "name": "parent",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "descendants",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -16585,7 +16585,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3200,
+            "line": 3198,
             "col": 2
           }
         },
@@ -16612,7 +16612,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3205,
+            "line": 3203,
             "col": 2
           }
         },
@@ -16639,7 +16639,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3210,
+            "line": 3208,
             "col": 2
           }
         },
@@ -16665,7 +16665,7 @@
               {
                 "kind": "param",
                 "name": "selectGroups",
-                "doc": "Optional boolean that specifies if groups should be selected. Default is false."
+                "doc": "Optional boolean that specifies if groups should be selected. Default is `false`."
               }
             ]
           },
@@ -16689,12 +16689,12 @@
               {
                 "kind": "identifier",
                 "name": "parent",
-                "optional": false
+                "optional": true
               },
               {
                 "kind": "identifier",
                 "name": "selectGroups",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -16709,7 +16709,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3219,
+            "line": 3217,
             "col": 2
           }
         },
@@ -16744,7 +16744,7 @@
               {
                 "kind": "identifier",
                 "name": "evt",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -16759,7 +16759,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3226,
+            "line": 3224,
             "col": 2
           }
         },
@@ -16794,7 +16794,7 @@
               {
                 "kind": "identifier",
                 "name": "evt",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -16809,7 +16809,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3233,
+            "line": 3231,
             "col": 2
           }
         },
@@ -16849,7 +16849,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3239,
+            "line": 3237,
             "col": 2
           }
         },
@@ -16889,7 +16889,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3245,
+            "line": 3243,
             "col": 2
           }
         },
@@ -16929,7 +16929,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3251,
+            "line": 3249,
             "col": 2
           }
         },
@@ -16969,7 +16969,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3257,
+            "line": 3255,
             "col": 2
           }
         },
@@ -17009,7 +17009,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3263,
+            "line": 3261,
             "col": 2
           }
         },
@@ -17049,7 +17049,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3269,
+            "line": 3267,
             "col": 2
           }
         },
@@ -17089,7 +17089,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3275,
+            "line": 3273,
             "col": 2
           }
         },
@@ -17139,7 +17139,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3282,
+            "line": 3280,
             "col": 2
           }
         },
@@ -17166,7 +17166,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3287,
+            "line": 3285,
             "col": 2
           }
         },
@@ -17193,7 +17193,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3292,
+            "line": 3290,
             "col": 2
           }
         },
@@ -17220,7 +17220,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3297,
+            "line": 3295,
             "col": 2
           }
         },
@@ -17270,7 +17270,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3304,
+            "line": 3302,
             "col": 2
           }
         },
@@ -17310,7 +17310,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3310,
+            "line": 3308,
             "col": 2
           }
         },
@@ -17360,7 +17360,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3317,
+            "line": 3315,
             "col": 2
           }
         },
@@ -17381,7 +17381,7 @@
               {
                 "kind": "param",
                 "name": "sender",
-                "doc": "Optional sender argument. Default is this."
+                "doc": "Optional sender argument. Default is `this`."
               }
             ]
           },
@@ -17405,7 +17405,7 @@
               {
                 "kind": "identifier",
                 "name": "sender",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -17420,7 +17420,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3325,
+            "line": 3323,
             "col": 2
           }
         },
@@ -17447,7 +17447,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3330,
+            "line": 3328,
             "col": 2
           }
         },
@@ -17482,7 +17482,7 @@
               {
                 "kind": "identifier",
                 "name": "cell",
-                "optional": false
+                "optional": true
               }
             ],
             "returnType": {
@@ -17497,7 +17497,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3360,
+            "line": 3358,
             "col": 2
           }
         },
@@ -17524,7 +17524,7 @@
           },
           "location": {
             "filename": "file:///C:/Users/kmnao/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/DrawIOHandler/files/sudo_mxGraph.ts",
-            "line": 3365,
+            "line": 3363,
             "col": 2
           }
         }
