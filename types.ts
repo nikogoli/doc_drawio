@@ -17,3 +17,10 @@ export type StateData = {
   name: string,
   node_data: DocNodeClass,
 }
+
+export const CLASSNAMES = [
+  "mxClient",
+  "mxGraph",
+  "mxGraphModel",
+  "mxResources",
+]

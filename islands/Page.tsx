@@ -3,6 +3,7 @@ import { useEffect } from "preact/hooks"
 
 import AttrPart from "./AttrPart.tsx"
 import DocPartElems from "./DocPartElems.tsx"
+import ChangeClassButton from "./ChangeClassButton.tsx"
 import { StateData, ClassPropertyDef, ClassMethodDef } from "../types.ts"
 
 
@@ -14,8 +15,9 @@ export default function Page(props: StateData) {
   }, [])
   
   return (
-    <div class="h-screen w-full p-6 font-magic flex relative">
-      <div class="h-full flex flex-col gap-6 w-full">
+    <div class="h-screen w-full p-6 font-magic flex">
+      <div class="h-full flex flex-col gap-6 w-full relative">
+        <ChangeClassButton current={name} />
         <ClassPart {...{name, data: props.node_data as unknown as ClassPropertyDef}}/>
         <AttrPart {...props}/>
       </div>
