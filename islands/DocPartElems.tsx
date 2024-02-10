@@ -35,18 +35,26 @@ export default function DocPartElems(props:{
     ? `${data.name}( ${params.map(d => d.name+(d.doc?.startsWith("Optional") ? "?" : "")).join(", ")} )`
     : data.name
 
-  const innerTextHandler = (text: string) => multiRegReplacer(text, [
-    { reg: /`(.+?)`/g,
-      toFunc: (mt) => <code class="text-sm bg-[#f0f0f0] font-hira px-0.5 rounded">{mt[1]}</code>},
-    { reg: /(True|true|False|false|Null|null)/g,
-      toFunc: (mt) => <code class="text-sm bg-[#f0f0f0] font-hira px-0.5 rounded">{mt[1]}</code> },
-    { reg: /^Optional/g,
-      toFunc: (_mt) => <span class="text-emerald-700">Optional</span>},
-    { reg: /(String|string|Number|number|Integer|integer|Boolean|boolean)/g,
-      toFunc: (mt) => <span class="text-purple-700">{mt[1]}</span>},
-    { reg: /(Default|default|Returns|returns)/g,
-      toFunc:  (mt) => <span class="text-rose-700">{mt[1]}</span>}
-  ])
+  const innerTextHandler = (text: string) => {
+    if (text == ""){ return [text] }
+    try {
+      return multiRegReplacer(text, [
+        { reg: /`(.+?)`/g,
+          toFunc: (mt) => <code class="text-sm bg-[#f0f0f0] font-hira px-0.5 rounded">{mt[1]}</code>},
+        { reg: /(True|true|False|false|Null|null)/g,
+          toFunc: (mt) => <code class="text-sm bg-[#f0f0f0] font-hira px-0.5 rounded">{mt[1]}</code> },
+        { reg: /^Optional/g,
+          toFunc: (_mt) => <span class="text-emerald-700">Optional</span>},
+        { reg: /(String|string|Number|number|Integer|integer|Boolean|boolean)/g,
+          toFunc: (mt) => <span class="text-purple-700">{mt[1]}</span>},
+        { reg: /(Default|default|Returns|returns)/g,
+          toFunc:  (mt) => <span class="text-rose-700">{mt[1]}</span>}
+      ])  
+    } catch (error) {
+      console.error(`multiRegReplacer failed for ${data.name}`)
+      return [text]
+    }
+  }
   
   const color_dic: {[k in "Class"|"Constructor"|"Method"|"Property"]: string} = {
     Class: "text-lime-600",
@@ -66,7 +74,10 @@ export default function DocPartElems(props:{
         : <Fragment>
           {d.text.split("\n").map(tx => {
             if (tx.startsWith("-")){
-              const [name, text] = tx.replace("- ", "").split("：")
+              const t = tx.replace("- ", "")
+              const [name, text] = t.includes("：") ? t.split("：")
+                : t.includes(",") ? t.split(",")
+                : ["", t]
               return listItemHandler(name, innerTextHandler(text))
             } else {
               return paragraphHandler(innerTextHandler(tx))
